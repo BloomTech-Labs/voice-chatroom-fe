@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 
-import Logout from './Logout';
+import Logout from '../buttons/Logout';
 
 const Dashboard = () => { 
     const { authState, authService } = useOktaAuth();
