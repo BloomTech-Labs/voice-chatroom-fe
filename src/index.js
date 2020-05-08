@@ -4,9 +4,14 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import OktaConfig from './components/utils/OktaConfig';
+import { Security } from '@okta/okta-react';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Security {...OktaConfig}>
+      <App />
+    </Security>
   </React.StrictMode>,
   document.getElementById('root')
 );

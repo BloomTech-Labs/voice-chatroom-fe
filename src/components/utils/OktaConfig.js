@@ -1,8 +1,8 @@
-const OKTA_DOMAIN = process.env.OKTA_DOMAIN;
-const CLIENT_ID = process.env.CLIENT_ID;
+const OKTA_DOMAIN = process.env.REACT_APP_OKTA_DOMAIN;
+const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 const CALLBACK_PATH = '/implicit/callback';
 
-const ISSUER = `https://${OKTA_DOMAIN}/oauth2/default`;
+const ISSUER = `${OKTA_DOMAIN}/oauth2/default`;
 const HOST = window.location.host;
 const REDIRECT_URI = `http://${HOST}${CALLBACK_PATH}`;
 const SCOPES = 'openid profile email';
