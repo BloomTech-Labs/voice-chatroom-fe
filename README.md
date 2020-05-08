@@ -23,6 +23,8 @@
 
 🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/c7b4753d6618dd572430/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/voice-chatroom-fe/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/c7b4753d6618dd572430/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/voice-chatroom-fe/test_coverage)
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
 ![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
