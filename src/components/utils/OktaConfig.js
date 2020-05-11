@@ -5,12 +5,12 @@ const CALLBACK_PATH = '/implicit/callback';
 const ISSUER = `${OKTA_DOMAIN}/oauth2/default`;
 const HOST = window.location.host;
 const REDIRECT_URI = `http://${HOST}${CALLBACK_PATH}`;
-const SCOPES = 'openid profile email';
+const SCOPES = ['openid', 'profile', 'email'];
 
 export default {
     issuer: ISSUER,
     clientId: CLIENT_ID,
     redirectUri: REDIRECT_URI,
-    scope: SCOPES.split(/\s+/),
+    scope: SCOPES,
     callbackPath: CALLBACK_PATH,
 };
