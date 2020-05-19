@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { SecureRoute, LoginCallback } from '@okta/okta-react';
 import OktaConfig from './components/utils/OktaConfig';
 
-import './App.css';
-
 import HomePage from './components/pages/HomePage';
 import Dashboard from './components/pages/Dashboard';
 
