@@ -3,7 +3,7 @@ import { useOktaAuth } from '@okta/okta-react';
 
 import Logout from '../buttons/Logout';
 
-const Dashboard = () => { 
+const Dashboard = () => {
     const { authState, authService } = useOktaAuth();
     const [userInfo, setUserInfo] = useState(null);
 
@@ -12,22 +12,24 @@ const Dashboard = () => {
             setUserInfo(null);
         } else {
             console.log(authState)
+            const accesstoken = authState.accessToken
+            localStorage.setItem('accessToken', accesstoken)
             authService.getUser().then((info) => {
                 console.log(info)
                 setUserInfo(info);
-        });
+            });
         }
     }, [authState, authService]);
-  
+
     return (
         <div>
-        { userInfo && 
-            <div>
-            <p>Welcome back, {userInfo.name}!</p>
-            <p></p>
-            </div>
-        }
-        {authState.isAuthenticated && <Logout />}
+            {userInfo &&
+                <div>
+                    <p>Welcome back, {userInfo.name}!</p>
+                    <p></p>
+                </div>
+            }
+            {authState.isAuthenticated && <Logout />}
         </div>
     );
 };
