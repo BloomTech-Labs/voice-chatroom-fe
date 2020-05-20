@@ -5,7 +5,7 @@ import { useOktaAuth } from '@okta/okta-react';
 const Login = () => { 
   const { authService } = useOktaAuth();
 
-  // okta login - redirects to '/dashboard'
+  // Okta login - redirects to '/dashboard'
   const login = () => authService.login('/dashboard');
 
   
