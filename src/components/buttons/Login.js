@@ -10,7 +10,7 @@ const Login = () => {
 
   
   return (
-        <button onClick={login}>Login</button>
+        <button onClick={login}>Login / Register</button>
     )
 };
 export default Login;

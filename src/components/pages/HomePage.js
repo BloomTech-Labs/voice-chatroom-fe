@@ -1,16 +1,16 @@
 import React from 'react'
-import { useOktaAuth } from '@okta/okta-react'
-
-import Login from '../buttons/Login'
-import Logout from '../buttons/Logout'
 
 const Homepage = () => {
-    const { authState } = useOktaAuth()
 
     return (
-        <div>
-            {authState.isAuthenticated ? <Logout /> : <Login />}
-        </div>
+        <section>
+            <div>
+                <h3>Marketing Mumbo Jumbo</h3>
+            </div>
+            <div>
+                <h3>Big ole Image here</h3>
+            </div>
+        </section>
     )
 
 }
