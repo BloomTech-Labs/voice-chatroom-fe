@@ -1,13 +1,18 @@
 import React from 'react'
+import { useOktaAuth } from '@okta/okta-react'
 
 import Login from '../buttons/Login'
+import Logout from '../buttons/Logout'
 
 const Header = () => {
+    const { authState } = useOktaAuth()
 
     return (
         <header>
             <h1>Guide Me</h1>
-            <Login />
+            {authState.isAuthenticated ? <Logout /> : <Login />}
         </header>
     )
 }
+
+export default Header
