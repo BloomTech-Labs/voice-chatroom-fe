@@ -3,8 +3,8 @@ const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 const CALLBACK_PATH = '/implicit/callback';
 
 const ISSUER = `${OKTA_DOMAIN}/oauth2/default`;
-const HOST = window.location.host;
-const REDIRECT_URI = `https://${HOST}${CALLBACK_PATH}`;
+const HOST = window.location.origin;
+const REDIRECT_URI = `${HOST}${CALLBACK_PATH}`;
 console.log(HOST)
 const SCOPES = ['openid', 'profile', 'email'];
 
