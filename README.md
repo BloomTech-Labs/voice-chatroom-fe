@@ -1,22 +1,14 @@
-
-Wyzer
+# Wyzer
 
 1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
 
-Contributors
 
-|                                       [Abdurrahman Ahmed](https://github.com/asahmed93)                                        |                                       [Thomas Barrett](https://github.com/tsbarrett89)                                        |                                       [Lydie Cherilus](https://github.com/lydiecherilus)                                   |                                       [Leon Chisum](https://github.com/LeonChisum/)                                        |                                       [Nicole Hollis](https://github.com/beautytechy)                                        |
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://avatars3.githubusercontent.com/u/56940751?s=400&u=59735a7836c017e1a05c6284a83fece83aabb4fa&v=4" width = "200" />](https://github.com/)                       |                      [<img src="https://avatars0.githubusercontent.com/u/47550906?s=400&u=a35e2e27da87a24ea55a6cfbe8a2570262d4921f&v=4" width = "200" />](https://github.com/)                       |                      [<img src="https://avatars0.githubusercontent.com/u/57009304?s=460&u=7be7c5e658b00bda96a941d9401798cab6b4d84b&v=4" width = "200" />](https://github.com/)                       |                      [<img src="https://avatars3.githubusercontent.com/u/50352020?s=400&u=5ce3d39ae97cfc0b79dbb3d029c8189f22c26c64&v=4" width = "200" />](https://github.com/)                       |                      [<img src="https://avatars0.githubusercontent.com/u/33879592?s=400&u=fcf53b5f4d77f36ef5809fb073fbb20b6e4d0825&v=4" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
-
-|                                       [Samuel Kraus](https://github.com/Skraus5628)                                        |                                       [Tony Kovar](https://github.com/tonyrkovar)                                        
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://avatars2.githubusercontent.com/u/53798819?s=400&u=379bae83fe5f8798d1958774d388d0c80ea51fd3&v=4" width = "200" />](https://github.com/)                       |                      [<img src="https://avatars3.githubusercontent.com/u/51797801?s=400&u=7de24b153f1bcf5d9f253f16cbcca68f685099f0&v=4" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
-
+## Contributors
+|                                                          [Abdurrahman Ahmed](https://github.com/asahmed93/)                                                           |                                                            [Thomas Barrett](https://github.com/tsbarrett89/)                                                            |                                                                                          [Lydie Cherilus](https://github.com/lydiecherilus/)                                                                                          |                                                             [Leon Chisum](https://github.com/LeonChisum/)                                                              |                                                            [Nicole Hollis](https://github.com/beautytechy/)                                                            |                                         [Samuel Kraus](https://github.com/Skraus5628/)                                          |                                       [Tony Kovar](https://github.com/tonyrkovar/)                                       |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://avatars3.githubusercontent.com/u/56940751?s=400&u=59735a7836c017e1a05c6284a83fece83aabb4fa&v=4" width = "200" />](https://https://https://github.com/asahmed93/) | [<img src="https://avatars0.githubusercontent.com/u/47550906?s=400&u=a35e2e27da87a24ea55a6cfbe8a2570262d4921f&v=4" width = "200" />](https://github.com/tsbarrett89/) | [<img src="https://avatars0.githubusercontent.com/u/57009304?s=460&u=7be7c5e658b00bda96a941d9401798cab6b4d84b&v=4" width = "200" />](https://github.com/lydiecherilus/) | [<img src="https://avatars3.githubusercontent.com/u/50352020?s=400&u=5ce3d39ae97cfc0b79dbb3d029c8189f22c26c64&v=4" width = "200" />](https://github.com/LeonChisum/) | [<img src="https://avatars0.githubusercontent.com/u/33879592?s=400&u=fcf53b5f4d77f36ef5809fb073fbb20b6e4d0825&v=4" width = "200" />](https://github.com/beautytechy/) | [<img src="https://avatars2.githubusercontent.com/u/53798819?s=400&u=379bae83fe5f8798d1958774d388d0c80ea51fd3&v=4" width = "200" />](https://github.com/Skraus5628/) | [<img src="https://avatars3.githubusercontent.com/u/51797801?s=400&u=7de24b153f1bcf5d9f253f16cbcca68f685099f0&v=4" width = "200" />](https://github.com/tonyrkovar/) |
+|                                           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/asahmed93)                                            |                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/tsbarrett89/)                                        |                                                                      [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/lydiecherilus/)                                                                      |                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/LeonChisum/)                                       |                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/beautytechy/)                                       |                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Skraus5628/)                                       |                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/tonyrkovar/)                   |
+|                        [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                        |               [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)               |                                                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                                                 |                     [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                     |                     [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                     |            [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)             | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
 <br>
 <br>
 
@@ -29,7 +21,7 @@ Contributors
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 
-Project Overview
+## Project Overview
 
 [Trello Board](https://trello.com/b/mDPp6xN7/pt10-guideme)
 
@@ -40,7 +32,7 @@ Project Overview
 Wyzer is an app that will connect people looking for a mentor with seasoned experts willing to share their knowledge and experience.
 
 
-Key Features
+### Key Features
 
 -    Create account and authentication with Okta
 -    Signup as Mentee with an option to become a Mentor
@@ -50,11 +42,11 @@ Key Features
 -    Users can communicate via voice or chat
 
 
-Tech Stack
+## Tech Stack
 
-Front end built using:
+### Front end built using:
 
-React
+#### React
 
 -    Reusable components 
 -    Fast and simple
@@ -74,9 +66,9 @@ Back end framework
 -    Postgres
 
 
-APIs
+## APIs
 
-https://${OKTA_DOMAIN}/oauth2/default
+#### https://${OKTA_DOMAIN}/oauth2/default
 
 
 🚫Replace text below with a description of the API
@@ -107,7 +99,7 @@ When you do it your way you can go anywhere you choose. Let your heart take you 
 
 Volunteering your time; it pays you and your whole community fantastic dividends. Maybe there's a happy little waterfall happening over here. You can spend all day playing with mountains. We don't have to be committed. We are just playing here. You have freedom here. The only guide is your heart. It's cold, but it's beautiful.
 
-Environment Variables
+## Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
@@ -123,13 +115,13 @@ In order for the app to function correctly, the user must set up their own envir
 | doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
 | rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
 
-Testing
+## Testing
 
     *  React Testing Library
     *  Jest
 
 
-Installation Instructions
+## Installation Instructions
 
     *  npm install
     *  setup environment variables (.env)
@@ -143,7 +135,7 @@ Installation Instructions
     * start - starts the production server after a build is created
     * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them
 
-# Contributing
+## Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
 
