@@ -9,7 +9,7 @@ const Header = () => {
 
     return (
         <header>
-            <h1>Guide Me</h1>
+            <h1>Wyzer</h1>
             {authState.isAuthenticated ? <Logout /> : <Login />}
         </header>
     )

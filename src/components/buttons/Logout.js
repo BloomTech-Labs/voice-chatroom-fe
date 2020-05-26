@@ -10,7 +10,7 @@ const Logout = () => {
     }
 
     return (
-        <button onClick={logout}>Log Out</button>
+        <button className="logout" onClick={logout}>Log Out</button>
     )
 }
 

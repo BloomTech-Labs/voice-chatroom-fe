@@ -22,7 +22,7 @@ const Dashboard = () => {
     }, [authState, authService]);
 
     return (
-        <div>
+        <div className="user">
             {userInfo &&
                 <div>
                     <p>Welcome back, {userInfo.name}!</p>
