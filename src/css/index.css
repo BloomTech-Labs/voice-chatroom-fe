@@ -176,7 +176,7 @@ header button:hover{
     background-repeat: no-repeat;
     height: 450px;
     width: 100%;
-    opacity: 80%;
+    
 }
 
 /* .home img{
@@ -212,7 +212,7 @@ header button:hover{
     height: 300px;
     width: 250px;
     background-color: #2A475E;
-    opacity: 90%;
+   
     margin-bottom: 2rem;
     margin-top: 5%;
     border-radius: 4px;
@@ -228,6 +228,7 @@ header button:hover{
 
 
 .midhome {
+
     font-family: 'Lobster', cursive;
     font-size: 35px;
     color: #FFC857;
