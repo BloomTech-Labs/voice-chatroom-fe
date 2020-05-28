@@ -5,7 +5,7 @@ const Navbar = ({userInfo}) => {
     console.log(userInfo)
 
     return (
-        <div>
+        <div className="navContainer">
             <nav className="userNav">
                 <a href="">Calendar</a>
                 <a href="">Find a Mentor</a>

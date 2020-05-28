@@ -126,10 +126,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+html {
+  min-height: 100%;
+}
 body {
   box-sizing: border-box;
   font-size: 62.5%;
   background-color: #FFFFFF;
+  min-height: 100%;
 }
 header {
   width: 100%;
@@ -142,135 +146,48 @@ header {
   color: #FFC857;
 }
 header h1 {
-  font-family: 'Lobster', cursive;
   font-size: 3rem;
   margin-left: 3%;
-  text-shadow: 2px 2px black;
-
 }
 header button {
   margin-right: 3%;
-  width: 15%;
-  height: 38%;
+  width: 12%;
+  height: 30%;
   background-color: #FFC857;
   font-size: 1.2rem;
   border-radius: 4px;
   text-align: center;
-  font-size: 16px;
-  border: 1px;
-  box-shadow: 3px 3px black;
 }
-
-header button:hover{
-    background-color: rgb(221, 169, 64);
-    box-shadow: 4px 5px black;
+.dashContainer {
+  width: 100%;
+  min-height: 100%;
+  background-color: #FFFFFF;
+  display: flex;
 }
-
-.hometop{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-image: url('../components/assets/climb.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 450px;
-    width: 100%;
-    
+.navContainer {
+  width: 12%;
+  min-height: calc(100vh - 100px);
+  overflow: hidden;
+  background-color: #BDD9BF;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
 }
-
-/* .home img{
-    
-    height: 450px;
-    width: 900px;
-} */
-
-.hometop h3{
-    font-family: 'Lobster', cursive;
-    font-size: 40px;
-    color: #FFC857;
-    text-shadow: 2px 2px black;
-    margin-bottom: 15px;
-
+.navContainer a {
+  text-decoration: none;
+  color: black;
 }
-
-
-
-.box{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: space-evenly;
-    margin: 0 auto;
-    margin-left: 10%;
-    margin-right: 10%;
-    
+.userNav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
-
-.box p{
-    height: 300px;
-    width: 250px;
-    background-color: #2A475E;
-   
-    margin-bottom: 2rem;
-    margin-top: 5%;
-    border-radius: 4px;
-    color: #BDD9BF;
-    font-size: 18px;
-    text-align: left;
-    padding: 15px;
-    padding-bottom: 5px;
-    padding-left: 20px;
-    padding-top: 18px;
-    box-shadow: 2px 3px black;
-}
-
-
-.midhome {
-
-    font-family: 'Lobster', cursive;
-    font-size: 35px;
-    color: #FFC857;
-    text-shadow: 2px 2px black;
-    margin-bottom: 5px;
-    margin-top: 15px;
-    text-align: center;
-}
-
-.midhome img{
-    margin-top: 15px;
-    border-radius: 5px;
-  
-}
-
-.mentor{
-  height: 400px;
-}
-
-
-/* Dashboard styling */
-
-.user{
-
-  font-family: 'Lobster', cursive;
-  font-size: 40px;
-  color: #FFC857;
-  text-shadow: 2px 2px black;
-  margin-bottom: 15px;
-}
-
-.logout{
-  margin-left: 1%;
-  width: 7%;
-  height: 30px;
-  background-color: #FFC857;
-  font-size: 1.2rem;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 16px;
-  border: 1px;
-  box-shadow: 3px 3px black;
-  background-color: rgb(221, 169, 64);
-  box-shadow: 4px 5px black;
+.mentorNav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }

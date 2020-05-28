@@ -22,7 +22,7 @@ const Dashboard = () => {
     }, [authState, authService]);
 
     return (
-        <div>
+        <div className="dashContainer">
             <Navbar userInfo={userInfo} />
             <div className="user">
                 {userInfo &&
