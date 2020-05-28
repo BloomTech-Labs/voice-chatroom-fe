@@ -1,19 +1,26 @@
 import React, { useState } from 'react'
 
-const Navbar = () => {
+const Navbar = ({userInfo}) => {
     const [mentorStatus, setMentorStatus] = useState(false)
+    console.log(userInfo)
 
     return (
         <div>
-            <ul className="userNav">
-
-            </ul>
-            <ul className="mentorNav">
-            {mentorStatus ? <li>Become a Mentor</li> : <li></li>}
-            </ul>
-            
+            <nav className="userNav">
+                <a href="">Calendar</a>
+                <a href="">Find a Mentor</a>
+                <a href="">Notes</a>
+                <a href="">Profile</a>
+            </nav>
+            {!mentorStatus ? <a href="">Become a Mentor</a> : 
+            <nav className="mentorNav">
+                <a href="">Mentor Profile</a>
+                <a href="">Resources</a>
+                <a href="">View Mentees</a>
+            </nav>
+            }
         </div>
     )
 }
 
-export default navbar
+export default Navbar

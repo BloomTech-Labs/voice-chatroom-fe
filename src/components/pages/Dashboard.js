@@ -16,7 +16,6 @@ const Dashboard = () => {
             const accesstoken = authState.accessToken
             localStorage.setItem('accessToken', accesstoken)
             authService.getUser().then((info) => {
-                console.log(info)
                 setUserInfo(info);
             });
         }
@@ -24,7 +23,7 @@ const Dashboard = () => {
 
     return (
         <div>
-            <Navbar />
+            <Navbar userInfo={userInfo} />
             <div className="user">
                 {userInfo &&
                     <div>
