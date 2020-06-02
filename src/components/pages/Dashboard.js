@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios'
 import { useOktaAuth } from '@okta/okta-react';
 
+//imported Components
 import Logout from '../buttons/Logout';
+import UserHeader from './UserHeader';
+
 
 const Dashboard = () => {
     const { authState, authService } = useOktaAuth();
@@ -24,10 +28,11 @@ const Dashboard = () => {
     return (
         <div className="user">
             {userInfo &&
-                <div>
-                    <p>Welcome back, {userInfo.name}!</p>
-                    <p></p>
-                </div>
+                // <div>
+                //     <p>Welcome back, {userInfo.name}!</p>
+                //     <p></p>
+                // </div>
+                <UserHeader user={userInfo} />
             }
             {authState.isAuthenticated && <Logout />}
         </div>
