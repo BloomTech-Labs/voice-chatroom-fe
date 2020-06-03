@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 
 import Logout from '../buttons/Logout';
+import Navbar from '../navigation/Navbar';
 
 const Dashboard = () => {
     const { authState, authService } = useOktaAuth();
@@ -15,21 +16,23 @@ const Dashboard = () => {
             const accesstoken = authState.accessToken
             localStorage.setItem('accessToken', accesstoken)
             authService.getUser().then((info) => {
-                console.log(info)
                 setUserInfo(info);
             });
         }
     }, [authState, authService]);
 
     return (
-        <div className="user">
-            {userInfo &&
-                <div>
-                    <p>Welcome back, {userInfo.name}!</p>
-                    <p></p>
-                </div>
-            }
-            {authState.isAuthenticated && <Logout />}
+        <div className="dashContainer">
+            <Navbar userInfo={userInfo} />
+            <div className="user">
+                {userInfo &&
+                    <div>
+                        <p>Welcome back, {userInfo.name}!</p>
+                        <p></p>
+                    </div>
+                }
+                {authState.isAuthenticated && <Logout />}
+            </div>
         </div>
     );
 };
