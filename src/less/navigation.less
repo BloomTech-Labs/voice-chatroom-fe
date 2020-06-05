@@ -3,22 +3,43 @@
     min-height: calc(100vh - 100px);
     overflow: hidden;
     background-color: @turqGreen;
-    display: flex;
-    flex-direction: column;
+    .flex(column);
     font-size: 1.1rem;
 
     a {
         text-decoration: none;
-        color: black;
+        color: @darkBlue;
     }
+}
+
+#notMentor{
+    justify-content: space-between;
 }
 
 .userNav{
     width: 100%;
     .flex(column);
+    padding: 5%;
+    border-bottom: 1px @darkBlue solid;
+
+    a {
+        margin-bottom: 5%;
+    }
 }
 
 .mentorNav{
     width: 100%;
     .flex(column);
+    padding: 5%;
+    margin-top: 5%;
+
+    a {
+        margin-bottom: 5%;
+    }
+}
+
+.becomeMentor {
+    color: @darkBlue;
+    padding: 5%;
+    margin-bottom: 5%;
 }
