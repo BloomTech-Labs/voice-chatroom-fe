@@ -3,7 +3,7 @@ import axios from 'axios';
 export const axioswithAuth = () => {
     return axios.create({
 
-        baseUrl: "http://localhost:6000",
+        baseUrl: process.env.DB_URL,
         headers: {
             Authorization: localStorage.getItem("accessToken")
         }

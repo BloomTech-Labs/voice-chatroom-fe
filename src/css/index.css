@@ -236,7 +236,7 @@ header button:hover {
 }
 .logout {
   margin-left: 1%;
-  width: 27%;
+  width: 15%;
   height: 30px;
   background-color: #FFC857;
   font-size: 16px;
@@ -254,11 +254,16 @@ header button:hover {
   background-color: #BDD9BF;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   font-size: 1.1rem;
 }
 .navContainer a {
   text-decoration: none;
-  color: black;
+  color: #1B2838;
+}
+#notMentor {
+  justify-content: space-between;
 }
 .userNav {
   width: 100%;
@@ -266,6 +271,11 @@ header button:hover {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  padding: 5%;
+  border-bottom: 1px #1B2838 solid;
+}
+.userNav a {
+  margin-bottom: 5%;
 }
 .mentorNav {
   width: 100%;
@@ -273,4 +283,14 @@ header button:hover {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  padding: 5%;
+  margin-top: 5%;
+}
+.mentorNav a {
+  margin-bottom: 5%;
+}
+.becomeMentor {
+  color: #1B2838;
+  padding: 5%;
+  margin-bottom: 5%;
 }
