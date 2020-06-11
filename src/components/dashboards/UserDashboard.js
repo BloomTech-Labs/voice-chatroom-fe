@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 import StarRatingComponent from "react-star-rating-component";
-import { axioswithAuth } from "../utils/axiosWithAuth";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 function UserDashboard() {
   const [date, setDate] = useState(new Date());
   const [user, setUser] = useState({});
   const [interests, setInterests] = useState([]);
 
-  axioswithAuth()
+  axiosWithAuth()
     .get(`users/:id`)
     .then((user) => {
       setUser(user);
       setInterests([user.interest_1, user.interest_2, user.interest_3]);
     });
 
-  axioswithAuth()
+  axiosWithAuth()
     .put(`users/:id`, user)
     .then((obj) => {
       setUser(obj);
