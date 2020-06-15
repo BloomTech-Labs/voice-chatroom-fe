@@ -9,36 +9,38 @@ const MentorRegistration = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit(submitMentorRegistration)}>
-            <label>Mentor Name:
+        <div className="mentorRegistration">
+            <form className="mentorRegisterForm" onSubmit={handleSubmit(submitMentorRegistration)}>
+                <label>Mentor Name:
+                    <input
+                        name="mentor_name"
+                        ref={register({ required: true })}
+                    />
+                </label>
+                <label>Main Mentor Category:
+                    <input
+                        name="category_1"
+                        ref={register({ required: true })}
+                    />
+                </label>
+                <label>Secondary Mentor Category:
+                    <input
+                        name="category_2"
+                        ref={register}
+                    />
+                </label>
+                <label>Third Mentor Category
+                    <input
+                        name="category_3"
+                        ref={register}
+                    />
+                </label>
                 <input
-                    name="mentor_name"
-                    ref={register({ required: true })}
+                    type="submit"
+                    value="Register"
                 />
-            </label>
-            <label>Main Mentor Category:
-                <input
-                    name="category_1"
-                    ref={register({ required: true })}
-                />
-            </label>
-            <label>Secondary Mentor Category:
-                <input
-                    name="category_2"
-                    ref={register}
-                />
-            </label>
-            <label>Third Mentor Category
-                <input
-                    name="category_3"
-                    ref={register}
-                />
-            </label>
-            <input
-                type="submit"
-                value="Register"
-            />
-        </form>
+            </form>
+        </div>
     )
 }
 

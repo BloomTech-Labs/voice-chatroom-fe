@@ -228,7 +228,7 @@ header button:hover {
   display: flex;
 }
 .user {
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   font-size: 40px;
   color: #FFC857;
   text-shadow: 2px 2px black;
@@ -293,4 +293,28 @@ header button:hover {
   color: #1B2838;
   padding: 5%;
   margin-bottom: 5%;
+}
+.mentorRegistration {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mentorRegisterForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #BDD9BF;
+  width: 60%;
+}
+.mentorRegisterForm label {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  font-size: 1.8rem;
+  margin-top: 2%;
+}
+.mentorRegisterForm label input {
+  width: 50%;
 }
