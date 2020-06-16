@@ -17,7 +17,6 @@ const Dashboard = () => {
     if (!authState.isAuthenticated) {
       setUserInfo(null);
     } else {
-      console.log(authState);
       //set accesstoken and retrieving client and setting it to state
       const accesstoken = authState.accessToken;
       localStorage.setItem("accessToken", accesstoken);
@@ -53,7 +52,7 @@ const Dashboard = () => {
           last_name: userInfo.family_name,
         })
         .then((res) => {
-          console.log(res);
+          console.log(res, "Res in !exisiting user");
           setUserInfo(res);
         })
         .catch((err) => console.log(err));
