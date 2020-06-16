@@ -6,6 +6,7 @@ import OktaConfig from './components/utils/OktaConfig';
 import Header from './components/pages/Header';
 import HomePage from './components/pages/HomePage';
 import Dashboard from './components/pages/Dashboard';
+import MentorRegistration from './components/pages/MentorRegistration'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" exact component={HomePage} />
         <Route path={OktaConfig.callbackPath} component={LoginCallback} />
         <SecureRoute path='/dashboard' component={Dashboard} />
+        <Route path='/mentor-registration' component={MentorRegistration} />
       </Router>
     </div>
   );

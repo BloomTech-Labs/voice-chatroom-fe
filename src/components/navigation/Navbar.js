@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = ({ userInfo }) => {
     const [mentorStatus, setMentorStatus] = useState(false)
@@ -11,12 +12,13 @@ const Navbar = ({ userInfo }) => {
                 <a href="">Notes</a>
                 <a href="">Profile</a>
             </nav>
-            {!mentorStatus ? <a className="becomeMentor" href="">Become a Mentor</a> :
-                <nav className="mentorNav">
-                    <a href="">Mentor Profile</a>
-                    <a href="">Resources</a>
-                    <a href="">View Mentees</a>
-                </nav>
+
+            {!mentorStatus ? <Link className="becomeMentor" to="/mentor-registration">Become a Mentor</Link> : 
+            <nav className="mentorNav">
+                <a href="">Mentor Profile</a>
+                <a href="">Resources</a>
+                <a href="">View Mentees</a>
+            </nav>
             }
         </div>
     )
