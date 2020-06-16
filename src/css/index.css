@@ -316,7 +316,7 @@ header button:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50%;
+  width: 70%;
   font-size: 1.2rem;
   margin-top: 6%;
 }
@@ -327,8 +327,18 @@ header button:hover {
 }
 .mentorRegisterSubmit {
   margin: 4% auto;
-  width: 25%;
+  width: 50%;
+  background-color: #FFC857;
+  height: 5vh;
 }
 .mentorBio {
   height: 8vh;
+}
+.plus {
+  width: 8%;
+  margin-right: 4%;
+}
+#addCategory {
+  display: flex;
+  align-items: flex-end;
 }
