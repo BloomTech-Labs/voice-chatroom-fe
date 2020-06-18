@@ -34,8 +34,11 @@ const Dashboard = () => {
 
     //get req to retrieve users in db
     axiosWithAuth()
-      .get("/users")
-      .then((res) => setUsers(res))
+      .get("users")
+      .then((res) => {
+        setUsers(res)
+        console.log(res)
+      })
       .catch((err) => console.log(err));
 
     //checking to see if onboard user is already in db
@@ -43,10 +46,11 @@ const Dashboard = () => {
       existingUser = users.find((i) => i.email === userInfo.email);
     }
 
+
     //adding user to db if not already
     if (!existingUser) {
       axiosWithAuth()
-        .post("/users", {
+        .post("users", {
           email: userInfo.email,
           first_name: userInfo.given_name,
           last_name: userInfo.family_name,
