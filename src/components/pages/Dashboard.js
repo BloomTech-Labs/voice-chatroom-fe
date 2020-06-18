@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useOktaAuth } from "@okta/okta-react";
+import { Route } from "react-router-dom";
 
 import Navbar from "../navigation/Navbar";
 import UserDashboard from "../dashboards/UserDashboard";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-import UserHeader from "./UserHeader";
+import UserProfile from "../profile/UserProfile";
 
 const Dashboard = () => {
   const { authState, authService } = useOktaAuth();
@@ -35,8 +36,8 @@ const Dashboard = () => {
     axiosWithAuth()
       .get("users")
       .then((res) => {
-        setUsers(res)
-        console.log(res)
+        setUsers(res);
+        console.log(res);
       })
       .catch((err) => console.log(err));
 
@@ -44,7 +45,6 @@ const Dashboard = () => {
     if (users !== null) {
       existingUser = users.find((i) => i.email === userInfo.email);
     }
-
 
     //adding user to db if not already
     if (!existingUser) {
@@ -65,9 +65,17 @@ const Dashboard = () => {
   return (
     <div className="dashContainer">
       <Navbar userInfo={userInfo} />
+      <Route
+        path="/dashboard/profile"
+        render={(props) => <UserProfile {...props} userInfo={userInfo} />}
+      />
       <div className="user">
-        {userInfo && <UserHeader user={userInfo} />}
-        <UserDashboard />
+        {userInfo && (
+          <Route
+            path="/dashboard/calender"
+            render={(props) => <UserDashboard {...props} user={userInfo} />}
+          />
+        )}
       </div>
     </div>
   );

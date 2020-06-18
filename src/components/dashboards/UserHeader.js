@@ -10,7 +10,7 @@ export default function UserHeader(props) {
   return (
     <div>
       <form>
-        <input value={props.user.name} type="text" onChange={}/>
+        {/* <input value={props.user.name} type="text" onChange={}/> */}
         <p>Welcome back, {props.user.name}!</p>
         <div>
           {/* <img src={props.user.avatar}></img>

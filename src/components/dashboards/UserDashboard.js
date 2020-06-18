@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import StarRatingComponent from "react-star-rating-component";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import UserHeader from "./UserHeader";
 
-function UserDashboard() {
+function UserDashboard(props) {
   const [date, setDate] = useState(new Date());
   const [user, setUser] = useState({});
   const [interests, setInterests] = useState([]);
@@ -27,6 +28,7 @@ function UserDashboard() {
 
   return (
     <div>
+      <UserHeader user={props.user}/>
       <Calendar onChange={onChange} value={date} />
       {date.toString()}
       <div>
