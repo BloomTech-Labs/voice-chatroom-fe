@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useOktaAuth } from "@okta/okta-react";
 
-import Logout from "../buttons/Logout";
 import Navbar from "../navigation/Navbar";
 import UserDashboard from "../dashboards/UserDashboard";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
