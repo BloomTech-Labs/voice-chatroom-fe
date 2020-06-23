@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useOktaAuth } from "@okta/okta-react"
+import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 import { axiosWithAuth } from '../utils/axiosWithAuth'
@@ -15,12 +16,15 @@ const VerifyUser = () => {
             const accessToken = authState.accessToken;
             localStorage.setItem("accessToken", accessToken);
             authService.getUser().then((info) => {
-                console.log(info)
+                console.log(info.email)
                 setUserInfo(info)
                 axiosWithAuth()
-                    .get('https://wyzerapp.herokuapp.com/users')
+                    .post('https://wyzerapp.herokuapp.com/users/email', {email: info.email})
                     .then(res => {
                         console.log(res.data)
+                        if(res.length > 0){
+                            return <Redirect to='/user-dashboard' />
+                        }
                     })
                     .catch(error => {
                         console.log(error.response)
