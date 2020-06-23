@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useOktaAuth } from "@okta/okta-react"
-import { Redirect } from 'react-router-dom'
-import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
+import { UserContext } from '../../contexts/UserContext'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 
-const VerifyUser = () => {
+const VerifyUser = props => {
     const { authState, authService } = useOktaAuth();
     const [userInfo, setUserInfo] = useState(null);
+    const { setUser } = useContext(UserContext)
+    let history = useHistory();
 
     useEffect(() => {
         if (!authState.isAuthenticated){
@@ -16,28 +18,29 @@ const VerifyUser = () => {
             const accessToken = authState.accessToken;
             localStorage.setItem("accessToken", accessToken);
             authService.getUser().then((info) => {
-                console.log(info.email)
                 setUserInfo(info)
                 axiosWithAuth()
-                    .post('https://wyzerapp.herokuapp.com/users/email', {email: info.email})
+                    .post('users/email', {email: info.email})
                     .then(res => {
-                        console.log(res.data)
-                        if(res.length > 0){
-                            return <Redirect to='/user-dashboard' />
-                        }
+                        if(res.data.length > 0){
+                            setUser(res.data[0])
+                            history.push('/user-dashboard')
+                        } else {
+                            axiosWithAuth()
+                                .post('users/', {
+                                    email: info.email,
+                                    first_name: info.given_name,
+                                    last_name: info.family_name
+                                })
+                                .then(res => {
+                                    setUser(res.data[0])
+                                    history.push('/user-dashboard')
+                                })
+                                .catch(err => console.log(err.response))
+                            }
                     })
                     .catch(error => {
-                        console.log(error.response)
-                        // if(error.response.status === 404){
-                        //     axiosWithAuth()
-                        //         .post('https://wyzerapp.herokuapp.com/users/', {
-                        //             email: info.email,
-                        //             given_name: info.given_name,
-                        //             family_name: info.family_name
-                        //         })
-                        //         .then(res => console.log(res.data))
-                        //         .catch(err => console.log(err.response))
-                        // }
+                        console.log('this is the other one', error)
                     })
             })
         }
