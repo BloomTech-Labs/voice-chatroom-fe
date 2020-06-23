@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { SecureRoute, LoginCallback } from '@okta/okta-react';
 import OktaConfig from './components/utils/OktaConfig';
