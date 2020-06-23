@@ -48,7 +48,7 @@ const VerifyUser = props => {
 
     return (
         <div>
-            {userInfo ? <h1>{userInfo.name}</h1> : <p>loading user info</p>}
+            <p>loading user info</p>
         </div>
     )
 }
