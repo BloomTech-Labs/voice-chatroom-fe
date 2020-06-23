@@ -5,22 +5,21 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 import UserHeader from "./UserHeader";
 
 function UserDashboard(props) {
+  const { user } = props
   const [date, setDate] = useState(new Date());
-  const [user, setUser] = useState({});
   const [interests, setInterests] = useState([]);
 
-  axiosWithAuth()
-    .get(`users/:id`)
-    .then((user) => {
-      setUser(user);
-      setInterests([user.interest_1, user.interest_2, user.interest_3]);
-    });
+  // axiosWithAuth()
+  //   .get(`users/${props.user.id}/interests`)
+  //   .then((user) => {
+  //     setInterests([user.interest_1, user.interest_2, user.interest_3]);
+  //   });
 
-  axiosWithAuth()
-    .put(`users/:id`, user)
-    .then((obj) => {
-      setUser(obj);
-    });
+  // axiosWithAuth()
+  //   .put(`users/:id`, user)
+  //   .then((obj) => {
+  //     setUser(obj);
+  //   });
 
   const onChange = (date) => {
     setDate(date);
@@ -28,8 +27,8 @@ function UserDashboard(props) {
 
   return (
     <div>
-      <UserHeader user={props.user}/>
-      <Calendar onChange={onChange} value={date} />
+      <UserHeader user={user}/>
+      {/* <Calendar onChange={onChange} value={date} /> */}
       {date.toString()}
       <div>
         Your Rating:{" "}

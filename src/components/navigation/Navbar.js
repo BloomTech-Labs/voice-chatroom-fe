@@ -7,7 +7,7 @@ const Navbar = ({ userInfo }) => {
   return (
     <div className="navContainer" id={!mentorStatus ? "notMentor" : "mentor"}>
       <nav className="userNav">
-        <Link to={location => ({ ...location, pathname: "/dashboard/calender" })} replace>Calender</Link>
+        <Link to={location => ({ ...location, pathname: "/dashboard/calender/:id" })} replace>Calender</Link>
         <a href="">Find a Mentor</a>
         <a href="">Notes</a>
         <Link to={location => ({ ...location, pathname: "/dashboard/profile" })} replace>Profile</Link>
