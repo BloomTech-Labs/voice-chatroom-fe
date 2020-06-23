@@ -1,25 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Calendar from "react-calendar";
 import StarRatingComponent from "react-star-rating-component";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+
+import { UserContext } from '../../contexts/UserContext';
 
 function UserDashboard() {
   const [date, setDate] = useState(new Date());
-  const [user, setUser] = useState({});
   const [interests, setInterests] = useState([]);
-
-  axiosWithAuth()
-    .get(`users/:id`)
-    .then((user) => {
-      setUser(user);
-      setInterests([user.interest_1, user.interest_2, user.interest_3]);
-    });
-
-  axiosWithAuth()
-    .put(`users/:id`, user)
-    .then((obj) => {
-      setUser(obj);
-    });
+  const { currentUser } = useContext(UserContext)
 
   const onChange = (date) => {
     setDate(date);
@@ -34,7 +22,7 @@ function UserDashboard() {
         <StarRatingComponent
           name="userRating"
           starCount={5}
-          value={user.rating}
+          value={currentUser.rating}
         />
       </div>
       {interests.forEach((item) => item)}
