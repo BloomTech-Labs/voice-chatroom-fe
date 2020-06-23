@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 
 import { UserContext } from '../../contexts/UserContext';
 
@@ -8,7 +8,6 @@ import UserHeader from "./UserHeader";
 
 const Dashboard = () => {
   const { currentUser } = useContext(UserContext)
-  console.log('current user', currentUser)
 
   return (
     <div className="dashContainer">
