@@ -3,8 +3,10 @@ import Calendar from "react-calendar";
 import StarRatingComponent from "react-star-rating-component";
 
 import { UserContext } from '../../contexts/UserContext';
+import UserHeader from "./UserHeader";
 
-function UserDashboard() {
+function UserDashboard(props) {
+  const { user } = props
   const [date, setDate] = useState(new Date());
   const [interests, setInterests] = useState([]);
   const { currentUser } = useContext(UserContext)
@@ -15,6 +17,7 @@ function UserDashboard() {
 
   return (
     <div>
+      <UserHeader user={user}/>
       <Calendar onChange={onChange} value={date} />
       {date.toString()}
       <div>
