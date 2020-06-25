@@ -7,18 +7,15 @@ import { axiosWithAuth } from '../utils/axiosWithAuth'
 
 const VerifyUser = () => {
     const { authState, authService } = useOktaAuth();
-    const [userInfo, setUserInfo] = useState(null);
     const { setUser } = useContext(UserContext)
     let history = useHistory();
 
     useEffect(() => {
         if (!authState.isAuthenticated){
-            setUserInfo(null)
         } else {
             const accessToken = authState.accessToken;
             localStorage.setItem("accessToken", accessToken);
             authService.getUser().then((info) => {
-                setUserInfo(info)
                 axiosWithAuth()
                     .post('users/email', {email: info.email})
                     .then(res => {
