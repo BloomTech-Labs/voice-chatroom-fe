@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom'
 import { UserContext } from '../../contexts/UserContext'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 
-const VerifyUser = props => {
+const VerifyUser = () => {
     const { authState, authService } = useOktaAuth();
     const [userInfo, setUserInfo] = useState(null);
     const { setUser } = useContext(UserContext)
