@@ -29,8 +29,8 @@ const VerifyUser = props => {
                             axiosWithAuth()
                                 .post('users/', {
                                     email: info.email,
-                                    first_name: info.given_name,
-                                    last_name: info.family_name
+                                    given_name: info.given_name,
+                                    family_name: info.family_name
                                 })
                                 .then(res => {
                                     setUser(res.data[0])
