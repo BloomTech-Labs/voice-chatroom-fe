@@ -39,7 +39,7 @@ const MentorRegistration = () => {
                         })
                         .then(res => {
                             console.log(res.status)
-                            setUser(res.data)
+                            setUser({...currentUser, isMentor: true})
                             history.push('/user-dashboard')
                         })
                         .catch(err => console.log(err))
