@@ -27,13 +27,23 @@ const MentorRegistration = () => {
             category_3: values.category_3,
             mentor_bio: values.mentor_bio
         }
-        console.log(mentor)
         
         axiosWithAuth()
             .post('/mentors/', mentor)
             .then(res => {
-                console.log(res.data)
-                // history.push('/user-dashboard')
+                console.log(res.status)
+                if(res.status === 201){
+                    axiosWithAuth()
+                        .put(`/users/${currentUser.id}`, {
+                            isMentor: true
+                        })
+                        .then(res => {
+                            console.log(res.status)
+                            history.push('/user-dashboard')
+                        })
+                        .catch(err => console.log(err))
+                }
+                
             })
             .catch(error => console.log(error))
     }
