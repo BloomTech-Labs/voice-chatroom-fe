@@ -10,7 +10,7 @@ import plus from '../assets/plus.png'
 const MentorRegistration = () => {
     const {register, handleSubmit, watch, errors} = useForm();
     const [categoryNumber, setCategoryNumber] = useState(1)
-    const { currentUser } = useContext(UserContext)
+    const { currentUser, setUser } = useContext(UserContext)
     let history = useHistory()
 
     const addCategory = e => {
@@ -39,6 +39,7 @@ const MentorRegistration = () => {
                         })
                         .then(res => {
                             console.log(res.status)
+                            setUser(res.data)
                             history.push('/user-dashboard')
                         })
                         .catch(err => console.log(err))
