@@ -22,7 +22,7 @@ function UserDashboard() {
         <StarRatingComponent
           name="userRating"
           starCount={5}
-          value={currentUser.rating}
+          // value={currentUser.rating}
         />
       </div>
       {interests.forEach((item) => item)}
