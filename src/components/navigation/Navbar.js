@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { NavLink, Link, useRouteMatch } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 import '../../sass/navigation.scss'
 
-const Navbar = ({ match }) => {
-  const [mentorStatus, setMentorStatus] = useState(false);
+const Navbar = () => {
+  const mentorStatus = useSelector(state => state.authReducer.user.isMentor)
 
   //Router hook to establish component URL
   const {url} = useRouteMatch();

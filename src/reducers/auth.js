@@ -2,9 +2,20 @@ import { userConstants } from '../actions/types';
 
 export const initialState = {
     user: {
-        given_name: '',
-        family_name: '',
-        email: ''
+        id: 0,
+        email: "",
+        given_name: "Thomas",
+        family_name: "",
+        username: "",
+        location: "",
+        interest_1: "",
+        interest_2: "",
+        interest_3: "",
+        created_at: "",
+        avatar: "",
+        isMentor: true,
+        user_bio: "",
+        user_rating: 0
     },
     isLoading: false,
     isLoggedIn: false,

@@ -4,6 +4,7 @@ import {
   Switch,
   useRouteMatch,
 } from "react-router-dom";
+import { useSelector } from 'react-redux'
 
 import '../../sass/dashboard.scss'
 
@@ -16,11 +17,12 @@ import UserProfile from "../profile/UserProfile";
 
 const Dashboard = () => {
   const { currentUser } = useContext(UserContext);
+  const user = useSelector(state => state.authReducer.user)
   const { path } = useRouteMatch();
 
   return (
     <div className="dashContainer">
-      <Navbar userInfo={currentUser} />
+      <Navbar userInfo={user} />
       <div>
         <Switch>
           <Route path={`${path}/calendar`}>
