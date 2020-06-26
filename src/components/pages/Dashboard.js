@@ -20,7 +20,6 @@ const Dashboard = () => {
   return (
     <div className="dashContainer">
       <Navbar />
-      <h1>Welcome {currentUser.given_name} {currentUser.family_name}!</h1>
       <div>
         <Switch>
           <Route path={`${path}/calendar`}>
