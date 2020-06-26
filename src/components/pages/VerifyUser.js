@@ -8,7 +8,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const VerifyUser = () => {
     const { authState, authService } = useOktaAuth();
-    const [currentUser, setCurrentUser] = useState({})
+    const [currentUser, setCurrentUser] = useState({id: 0})
     const dispatch = useDispatch()
     let history = useHistory();
 
