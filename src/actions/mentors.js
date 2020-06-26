@@ -42,3 +42,7 @@ export const getAllMentors = () => dispatch => {
 }
 
 // repeat for any functions used :)
+
+export const actionCreators = {
+    getAllMentors,
+}
