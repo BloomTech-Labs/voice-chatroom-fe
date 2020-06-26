@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-
-import { UserContext } from '../../contexts/UserContext';
+import { useSelector } from 'react=redux'
 
 export default function UserHeader(props) {
-  const { currentUser } = useContext(UserContext)
+  const currentUser = useSelector(state => state.authReducer.user)
 
   return (
     <div>
