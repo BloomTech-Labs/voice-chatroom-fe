@@ -5,14 +5,14 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Biryani';
-    color: @white;
+    color: #FFFFFF;
 }
 
 .mentorRegisterForm {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: @lightBlue;
+    background-color: #2A475E;
     width: 40%;
     border-radius: 4%;
     margin-top: 6%;
@@ -36,7 +36,7 @@
 .mentorRegisterSubmit {
     margin: 4% auto;
     width: 50%;
-    background-color: @yellow;
+    background-color: #FFC857;
     height: 5vh;
 }
 

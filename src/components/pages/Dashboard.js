@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 
+import '../../sass/dashboard.scss'
+
 import { UserContext } from '../../contexts/UserContext';
 
 import Navbar from "../navigation/Navbar";
