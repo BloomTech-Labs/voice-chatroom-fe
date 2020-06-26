@@ -32,7 +32,7 @@ export const getAllMentors = () => dispatch => {
         AxiosWithAuth().get(`/users`)
             .then(res =>{
             console.log(res.data)
-        dispatch({ type: FETCH_ALL_SUCCESS,
+            dispatch({ type: FETCH_ALL_SUCCESS,
                     payload: res.data
         })
     })
