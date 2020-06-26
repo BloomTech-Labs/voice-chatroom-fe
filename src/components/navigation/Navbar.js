@@ -1,16 +1,28 @@
 import React, { useState } from "react";
-import { NavLink , Link } from "react-router-dom";
+import { NavLink, Link, useRouteMatch } from "react-router-dom";
 
-const Navbar = ({ userInfo }) => {
+const Navbar = ({ match }) => {
   const [mentorStatus, setMentorStatus] = useState(false);
+
+  //Router hook to establish component URL
+  const {url} = useRouteMatch();
 
   return (
     <div className="navContainer" id={!mentorStatus ? "notMentor" : "mentor"}>
       <nav className="userNav">
-        <Link to={location => ({ ...location, pathname: "/dashboard/calender/:id" })} replace>Calender</Link>
+        <Link
+          to={`${url}/calendar`}
+        >
+          Calender
+        </Link>
         <a href="">Find a Mentor</a>
         <a href="">Notes</a>
-        <Link to={location => ({ ...location, pathname: "/dashboard/profile" })} replace>Profile</Link>
+        <Link
+          to={`${url}/profile`}
+          replace
+        >
+          Profile
+        </Link>
       </nav>
 
       {!mentorStatus ? (

@@ -17,7 +17,7 @@ function UserDashboard(props) {
 
   return (
     <div>
-      <UserHeader user={user}/>
+      <UserHeader user={currentUser}/>
       <Calendar onChange={onChange} value={date} />
       {date.toString()}
       <div>

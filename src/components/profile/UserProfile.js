@@ -6,7 +6,6 @@ import plus from "../assets/plus.png";
 export default function UserProfile() {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => console.log(data);
-  console.log(errors);
 
   const [categoryNumber, setCategoryNumber] = useState(1);
 

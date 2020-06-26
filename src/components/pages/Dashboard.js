@@ -1,31 +1,34 @@
 import React, { useContext } from "react";
-import { Route } from "react-router-dom";
+import {
+  Route,
+  Switch,
+  useRouteMatch,
+} from "react-router-dom";
 
-import { UserContext } from '../../contexts/UserContext';
+//Bringing in user 
+import { UserContext } from "../../contexts/UserContext";
 
+//importing Components
 import Navbar from "../navigation/Navbar";
 import UserDashboard from "../dashboards/UserDashboard";
-import UserProfile from "../profile/UserProfile"
-
-
+import UserProfile from "../profile/UserProfile";
 
 const Dashboard = () => {
-  const { currentUser } = useContext(UserContext)
+  const { currentUser } = useContext(UserContext);
+  const { path } = useRouteMatch();
 
-  // checkExistingUser();
-  
   return (
     <div className="dashContainer">
       <Navbar userInfo={currentUser} />
-      <Route
-        path="/dashboard/profile"
-        render={(props) => <UserProfile {...props} userInfo={currentUser} />}
-      />
-      <div className="user">
-          <Route
-            path="/dashboard/calender"
-            render={(props) => <UserDashboard {...props} user={currentUser} />}
-          />
+      <div>
+        <Switch>
+          <Route path={`${path}/calendar`}>
+            <UserDashboard />
+          </Route>
+          <Route path={`${path}/profile`}>
+            <UserProfile />
+          </Route>
+        </Switch>
       </div>
     </div>
   );
