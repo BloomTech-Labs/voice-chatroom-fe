@@ -1,6 +1,8 @@
 import React from 'react'
 import { useOktaAuth } from '@okta/okta-react'
 
+import '../../sass/header.scss'
+
 import Login from '../buttons/Login'
 import Logout from '../buttons/Logout'
 
