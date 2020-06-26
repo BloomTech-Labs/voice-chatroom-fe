@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 
+import '../../sass/navigation.scss'
+
 import { UserContext } from '../../contexts/UserContext'
 
 const Navbar = () => {
