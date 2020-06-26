@@ -8,8 +8,6 @@ import { useSelector } from 'react-redux'
 
 import '../../sass/dashboard.scss'
 
-import { UserContext } from '../../contexts/UserContext';
-
 //importing Components
 import Navbar from "../navigation/Navbar";
 import UserDashboard from "../dashboards/UserDashboard";
@@ -21,7 +19,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashContainer">
-      <Navbar userInfo={currentUser} />
+      <Navbar />
       <div>
         <Switch>
           <Route path={`${path}/calendar`}>
