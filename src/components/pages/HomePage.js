@@ -2,6 +2,8 @@ import React from 'react'
 import thread from '../assets/thread.jpg'
 import mentor from '../assets/mentorpair.png'
 
+import '../../sass/homepage.scss'
+
 const Homepage = () => {
 
     return (

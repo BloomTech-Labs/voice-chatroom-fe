@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { SecureRoute, LoginCallback } from "@okta/okta-react";
 import OktaConfig from "./components/utils/OktaConfig";
 
-import { UserContext } from "./contexts/UserContext";
+import './sass/global.scss';
+
+import { UserContext } from './contexts/UserContext';
 
 import VerifyUser from './components/pages/VerifyUser';
 import Header from './components/pages/Header';
@@ -12,7 +14,22 @@ import Dashboard from './components/pages/Dashboard';
 import MentorRegistration from './components/pages/MentorRegistration'
 
 function App() {
-  const [currentUser, setCurrentUser] = useState({})
+  const [currentUser, setCurrentUser] = useState({
+      id: 0,
+      email: "",
+      given_name: "",
+      family_name: "",
+      username: "",
+      location: "",
+      interest_1: "",
+      interest_2: "",
+      interest_3: "",
+      created_at: "",
+      avatar: "",
+      isMentor: false,
+      user_bio: "",
+      user_rating: 0
+  })
 
   const setUser = (user) => {
     setCurrentUser(user);
@@ -20,8 +37,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <UserContext.Provider value={{ currentUser, setUser }}>
+        <Header />
         <Router>
           <Route path="/" exact component={HomePage} />
           <Route path={OktaConfig.callbackPath} component={LoginCallback} />

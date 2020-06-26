@@ -7,7 +7,7 @@ export default function UserHeader(props) {
 
   return (
     <div>
-      <p>Welcome back, {currentUser.first_name} {currentUser.last_name}!</p>
+      <p>Welcome back, {currentUser.given_name} {currentUser.family_name}!</p>
       <div>
         {/* <img src={props.user.avatar}></img>
         <p>{props.user.location}</p> */}

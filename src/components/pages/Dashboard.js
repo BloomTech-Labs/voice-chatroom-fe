@@ -5,8 +5,9 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 
-//Bringing in user 
-import { UserContext } from "../../contexts/UserContext";
+import '../../sass/dashboard.scss'
+
+import { UserContext } from '../../contexts/UserContext';
 
 //importing Components
 import Navbar from "../navigation/Navbar";

@@ -1,5 +1,8 @@
 import React, { useState, useContext } from 'react'
 import { useForm } from 'react-hook-form'
+import { useHistory } from 'react-router-dom'
+
+import '../../sass/mentorRegistration.scss'
 
 import { UserContext } from '../../contexts/UserContext'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
@@ -9,7 +12,8 @@ import plus from '../assets/plus.png'
 const MentorRegistration = () => {
     const {register, handleSubmit, watch, errors} = useForm();
     const [categoryNumber, setCategoryNumber] = useState(1)
-    const { currentUser } = useContext(UserContext)
+    const { currentUser, setUser } = useContext(UserContext)
+    let history = useHistory()
 
     const addCategory = e => {
         e.preventDefault()
@@ -25,19 +29,26 @@ const MentorRegistration = () => {
             category_3: values.category_3,
             mentor_bio: values.mentor_bio
         }
-        console.log(mentor)
         
-        // axiosWithAuth()
-        //     .post('/mentors/', {
-        //         mentor_id: currentUser.id,
-        //         mentor_name: values.mentor_name,
-        //         category_1: values.category_1,
-        //         category_2: values.category_2,
-        //         category_3: values.category_3,
-        //         mentor_bio: values.mentor_bio
-        //     })
-        //     .then(res => console.log(res))
-        //     .catch(error => console.log(error))
+        axiosWithAuth()
+            .post('/mentors/', mentor)
+            .then(res => {
+                console.log(res.status)
+                if(res.status === 201){
+                    axiosWithAuth()
+                        .put(`/users/${currentUser.id}`, {
+                            isMentor: true
+                        })
+                        .then(res => {
+                            console.log(res.status)
+                            setUser({...currentUser, isMentor: true})
+                            history.push('/user-dashboard')
+                        })
+                        .catch(err => console.log(err))
+                }
+                
+            })
+            .catch(error => console.log(error))
     }
 
     return (
