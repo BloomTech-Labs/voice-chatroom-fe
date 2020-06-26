@@ -12,7 +12,22 @@ import Dashboard from './components/pages/Dashboard';
 import MentorRegistration from './components/pages/MentorRegistration'
 
 function App() {
-  const [currentUser, setCurrentUser] = useState({})
+  const [currentUser, setCurrentUser] = useState({
+      id: 0,
+      email: "",
+      given_name: "",
+      family_name: "",
+      username: "",
+      location: "",
+      interest_1: "",
+      interest_2: "",
+      interest_3: "",
+      created_at: "",
+      avatar: "",
+      isMentor: false,
+      user_bio: "",
+      user_rating: 0
+  })
 
   const setUser = user => {
     setCurrentUser(user)

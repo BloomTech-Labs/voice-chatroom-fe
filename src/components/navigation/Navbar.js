@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 
-const Navbar = ({ userInfo }) => {
-    const [mentorStatus, setMentorStatus] = useState(false)
+import { UserContext } from '../../contexts/UserContext'
+
+const Navbar = () => {
+    const { currentUser } = useContext(UserContext)
 
     return (
-        <div className="navContainer" id={!mentorStatus ? "notMentor" : "mentor"}>
+        <div className="navContainer" id={!currentUser.isMentor ? "notMentor" : "mentor"}>
             <nav className="userNav" >
                 <a href="">Calendar</a>
                 <a href="">Find a Mentor</a>
@@ -13,7 +15,7 @@ const Navbar = ({ userInfo }) => {
                 <a href="">Profile</a>
             </nav>
 
-            {!mentorStatus ? <Link className="becomeMentor" to="/mentor-registration">Become a Mentor</Link> : 
+            {!currentUser.isMentor ? <Link className="becomeMentor" to="/mentor-registration">Become a Mentor</Link> : 
             <nav className="mentorNav">
                 <a href="">Mentor Profile</a>
                 <a href="">Resources</a>

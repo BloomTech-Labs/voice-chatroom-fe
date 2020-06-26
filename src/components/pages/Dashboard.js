@@ -8,6 +8,7 @@ import UserHeader from "./UserHeader";
 
 const Dashboard = () => {
   const { currentUser } = useContext(UserContext)
+  console.log(currentUser)
 
   return (
     <div className="dashContainer">

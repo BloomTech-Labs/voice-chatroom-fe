@@ -5,20 +5,17 @@ import { useHistory } from 'react-router-dom'
 import { UserContext } from '../../contexts/UserContext'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 
-const VerifyUser = props => {
+const VerifyUser = () => {
     const { authState, authService } = useOktaAuth();
-    const [userInfo, setUserInfo] = useState(null);
     const { setUser } = useContext(UserContext)
     let history = useHistory();
 
     useEffect(() => {
         if (!authState.isAuthenticated){
-            setUserInfo(null)
         } else {
             const accessToken = authState.accessToken;
             localStorage.setItem("accessToken", accessToken);
             authService.getUser().then((info) => {
-                setUserInfo(info)
                 axiosWithAuth()
                     .post('users/email', {email: info.email})
                     .then(res => {
@@ -29,8 +26,8 @@ const VerifyUser = props => {
                             axiosWithAuth()
                                 .post('users/', {
                                     email: info.email,
-                                    first_name: info.given_name,
-                                    last_name: info.family_name
+                                    given_name: info.given_name,
+                                    family_name: info.family_name
                                 })
                                 .then(res => {
                                     setUser(res.data[0])
