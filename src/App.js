@@ -34,8 +34,8 @@ function App() {
   }
 
   return (
-    <UserContext.Provider value={{ currentUser, setUser }}>
-      <div className="App">
+    <div className="App">
+      <UserContext.Provider value={{ currentUser, setUser }}>
         <Header />
         <Router>
           <Route path="/" exact component={HomePage} />
@@ -44,8 +44,8 @@ function App() {
           <SecureRoute path='/user-dashboard' component={Dashboard} />
           <Route path='/mentor-registration' component={MentorRegistration} />
         </Router>
-      </div>
-    </UserContext.Provider>
+      </UserContext.Provider>
+    </div>
   );
 }
 
