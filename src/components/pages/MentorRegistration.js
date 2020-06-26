@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useHistory } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import '../../sass/mentorRegistration.scss'
 
-import { UserContext } from '../../contexts/UserContext'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 
 import plus from '../assets/plus.png'
@@ -12,7 +12,7 @@ import plus from '../assets/plus.png'
 const MentorRegistration = () => {
     const {register, handleSubmit, watch, errors} = useForm();
     const [categoryNumber, setCategoryNumber] = useState(1)
-    const { currentUser, setUser } = useContext(UserContext)
+    const currentUser = useSelector(state => state.authReducer.user)
     let history = useHistory()
 
     const addCategory = e => {
@@ -40,9 +40,7 @@ const MentorRegistration = () => {
                             isMentor: true
                         })
                         .then(res => {
-                            console.log(res.status)
-                            setUser({...currentUser, isMentor: true})
-                            history.push('/user-dashboard')
+                            history.push('/dashboard')
                         })
                         .catch(err => console.log(err))
                 }
