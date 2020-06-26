@@ -4,7 +4,7 @@ export const initialState = {
     user: {
         id: 0,
         email: "",
-        given_name: "Thomas",
+        given_name: "",
         family_name: "",
         username: "",
         location: "",
@@ -13,7 +13,7 @@ export const initialState = {
         interest_3: "",
         created_at: "",
         avatar: "",
-        isMentor: true,
+        isMentor: false,
         user_bio: "",
         user_rating: 0
     },
