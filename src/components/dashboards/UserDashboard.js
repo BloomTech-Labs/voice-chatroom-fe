@@ -1,15 +1,14 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
+import { useSelector } from 'react-redux';
 import Calendar from "react-calendar";
 import StarRatingComponent from "react-star-rating-component";
 
-import { UserContext } from '../../contexts/UserContext';
 import UserHeader from "./UserHeader";
 
-function UserDashboard(props) {
-  const { user } = props
+function UserDashboard() {
   const [date, setDate] = useState(new Date());
   const [interests, setInterests] = useState([]);
-  const { currentUser } = useContext(UserContext)
+  const currentUser = useSelector(state => state.authReducer.user)
 
   const onChange = (date) => {
     setDate(date);
