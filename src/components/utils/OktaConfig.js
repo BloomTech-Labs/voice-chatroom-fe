@@ -5,7 +5,6 @@ const CALLBACK_PATH = '/implicit/callback';
 const ISSUER = `${OKTA_DOMAIN}/oauth2/default`;
 const HOST = window.location.origin;
 const REDIRECT_URI = `${HOST}${CALLBACK_PATH}`;
-// console.log(HOST)
 const SCOPES = ['openid', 'profile', 'email'];
 
 export default {

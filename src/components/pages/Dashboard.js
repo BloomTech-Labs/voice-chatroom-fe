@@ -1,37 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { useOktaAuth } from '@okta/okta-react';
+import React, { useContext } from "react";
 
-import Logout from '../buttons/Logout';
+import { UserContext } from '../../contexts/UserContext';
+
+import Navbar from "../navigation/Navbar";
+import UserDashboard from "../dashboards/UserDashboard";
+import UserHeader from "./UserHeader";
 
 const Dashboard = () => {
-    const { authState, authService } = useOktaAuth();
-    const [userInfo, setUserInfo] = useState(null);
+  const { currentUser } = useContext(UserContext)
+  console.log(currentUser)
 
-    useEffect(() => {
-        if (!authState.isAuthenticated) {
-            setUserInfo(null);
-        } else {
-            console.log(authState)
-            const accesstoken = authState.accessToken
-            localStorage.setItem('accessToken', accesstoken)
-            authService.getUser().then((info) => {
-                console.log(info)
-                setUserInfo(info);
-            });
-        }
-    }, [authState, authService]);
-
-    return (
-        <div className="user">
-            {userInfo &&
-                <div>
-                    <p>Welcome back, {userInfo.name}!</p>
-                    <p></p>
-                </div>
-            }
-            {authState.isAuthenticated && <Logout />}
-        </div>
-    );
+  return (
+    <div className="dashContainer">
+      <Navbar userInfo={currentUser} />
+      <div className="user">
+        {currentUser && <UserHeader user={currentUser} />}
+        <UserDashboard />
+      </div>
+    </div>
+  );
 };
 
 export default Dashboard;
