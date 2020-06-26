@@ -19,6 +19,7 @@ const Dashboard = () => {
   const { currentUser } = useContext(UserContext);
   const user = useSelector(state => state.authReducer.user)
   const { path } = useRouteMatch();
+  console.log(currentUser)
 
   return (
     <div className="dashContainer">
