@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import {
   Route,
   Switch,
@@ -16,14 +16,12 @@ import UserDashboard from "../dashboards/UserDashboard";
 import UserProfile from "../profile/UserProfile";
 
 const Dashboard = () => {
-  const { currentUser } = useContext(UserContext);
-  const user = useSelector(state => state.authReducer.user)
+  const currentUser = useSelector(state => state.authReducer.user)
   const { path } = useRouteMatch();
-  console.log(currentUser)
 
   return (
     <div className="dashContainer">
-      <Navbar userInfo={user} />
+      <Navbar userInfo={currentUser} />
       <div>
         <Switch>
           <Route path={`${path}/calendar`}>
