@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import { useHistory } from 'react-router-dom'
 
+import '../../sass/mentorRegistration.scss'
+
 import { UserContext } from '../../contexts/UserContext'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 
