@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { NavLink, Link, useRouteMatch } from "react-router-dom";
 
+import '../../sass/navigation.scss'
+
 const Navbar = ({ match }) => {
   const [mentorStatus, setMentorStatus] = useState(false);
 
