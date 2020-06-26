@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { SecureRoute, LoginCallback } from '@okta/okta-react';
-import OktaConfig from './components/utils/OktaConfig';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { SecureRoute, LoginCallback } from "@okta/okta-react";
+import OktaConfig from "./components/utils/OktaConfig";
 
 import './sass/global.scss';
 
@@ -31,9 +31,9 @@ function App() {
       user_rating: 0
   })
 
-  const setUser = user => {
-    setCurrentUser(user)
-  }
+  const setUser = (user) => {
+    setCurrentUser(user);
+  };
 
   return (
     <div className="App">
@@ -42,7 +42,7 @@ function App() {
         <Router>
           <Route path="/" exact component={HomePage} />
           <Route path={OktaConfig.callbackPath} component={LoginCallback} />
-          <SecureRoute path="/dashboard" component={VerifyUser} />
+          <SecureRoute exact path="/dashboard" component={VerifyUser} />
           <SecureRoute path='/user-dashboard' component={Dashboard} />
           <Route path='/mentor-registration' component={MentorRegistration} />
         </Router>

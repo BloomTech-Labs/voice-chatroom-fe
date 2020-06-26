@@ -1,31 +1,43 @@
-import React, { useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { NavLink, Link, useRouteMatch } from "react-router-dom";
 
-import '../../sass/navigation.scss'
+const Navbar = ({ match }) => {
+  const [mentorStatus, setMentorStatus] = useState(false);
 
-import { UserContext } from '../../contexts/UserContext'
+  //Router hook to establish component URL
+  const {url} = useRouteMatch();
 
-const Navbar = () => {
-    const { currentUser } = useContext(UserContext)
+  return (
+    <div className="navContainer" id={!mentorStatus ? "notMentor" : "mentor"}>
+      <nav className="userNav">
+        <Link
+          to={`${url}/calendar`}
+        >
+          Calender
+        </Link>
+        <a href="">Find a Mentor</a>
+        <a href="">Notes</a>
+        <Link
+          to={`${url}/profile`}
+          replace
+        >
+          Profile
+        </Link>
+      </nav>
 
-    return (
-        <div className="navContainer" id={!currentUser.isMentor ? "notMentor" : "mentor"}>
-            <nav className="userNav" >
-                <a href="">Calendar</a>
-                <a href="">Find a Mentor</a>
-                <a href="">Notes</a>
-                <a href="">Profile</a>
-            </nav>
+      {!mentorStatus ? (
+        <Link className="becomeMentor" to="/mentor-registration">
+          Become a Mentor
+        </Link>
+      ) : (
+        <nav className="mentorNav">
+          <a href="">Mentor Profile</a>
+          <a href="">Resources</a>
+          <a href="">View Mentees</a>
+        </nav>
+      )}
+    </div>
+  );
+};
 
-            {!currentUser.isMentor ? <Link className="becomeMentor" to="/mentor-registration">Become a Mentor</Link> : 
-            <nav className="mentorNav">
-                <a href="">Mentor Profile</a>
-                <a href="">Resources</a>
-                <a href="">View Mentees</a>
-            </nav>
-            }
-        </div>
-    )
-}
-
-export default Navbar
+export default Navbar;

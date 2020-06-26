@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react'
-import { useOktaAuth } from "@okta/okta-react"
-import { useHistory } from 'react-router-dom'
+import React, { useState, useEffect, useContext } from "react";
+import { useOktaAuth } from "@okta/okta-react";
+import { useHistory } from "react-router-dom";
 
-import { UserContext } from '../../contexts/UserContext'
-import { axiosWithAuth } from '../utils/axiosWithAuth'
+import { UserContext } from "../../contexts/UserContext";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const VerifyUser = () => {
     const { authState, authService } = useOktaAuth();
@@ -43,11 +43,11 @@ const VerifyUser = () => {
         }
     }, [])
 
-    return (
-        <div>
-            <p>loading user info</p>
-        </div>
-    )
-}
+  return (
+    <div>
+      <p>loading user info</p>
+    </div>
+  );
+};
 
-export default VerifyUser
+export default VerifyUser;
