@@ -1,13 +1,15 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useOktaAuth } from "@okta/okta-react";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from 'react-redux'
 
-import { UserContext } from "../../contexts/UserContext";
+import { setUser } from '../../actions/auth'
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const VerifyUser = () => {
     const { authState, authService } = useOktaAuth();
-    const { setUser } = useContext(UserContext)
+    const [currentUser, setCurrentUser] = useState({id: 0})
+    const dispatch = useDispatch()
     let history = useHistory();
 
     useEffect(() => {
@@ -20,8 +22,8 @@ const VerifyUser = () => {
                     .post('users/email', {email: info.email})
                     .then(res => {
                         if(res.data.length > 0){
-                            setUser(res.data[0])
-                            history.push('/user-dashboard')
+                            setCurrentUser(res.data[0])
+                            // history.push('/user-dashboard')
                         } else {
                             axiosWithAuth()
                                 .post('users/', {
@@ -30,8 +32,8 @@ const VerifyUser = () => {
                                     family_name: info.family_name
                                 })
                                 .then(res => {
-                                    setUser(res.data[0])
-                                    history.push('/user-dashboard')
+                                    setCurrentUser(res.data[0])
+                                    // history.push('/user-dashboard')
                                 })
                                 .catch(err => console.log(err.response))
                             }
@@ -42,6 +44,14 @@ const VerifyUser = () => {
             })
         }
     }, [])
+
+    useEffect(() => {
+        console.log(currentUser)
+        dispatch(setUser(currentUser))
+        if(currentUser.id > 0){
+            history.push('/user-dashboard')
+        }
+    }, [currentUser])
 
   return (
     <div>
