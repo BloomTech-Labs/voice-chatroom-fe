@@ -33,6 +33,7 @@ const MentorRegistration = () => {
         }
 
         dispatch(registerMentor(mentor, currentUser.id))
+        history.push('/dashboard')
         
         // axiosWithAuth()
         //     .post('/mentors/', mentor)
