@@ -19,8 +19,8 @@ function App() {
       <Router>
         <Route path="/" exact component={HomePage} />
         <Route path={OktaConfig.callbackPath} component={LoginCallback} />
-        <SecureRoute exact path="/dashboard" component={VerifyUser} />
-        <SecureRoute path='/user-dashboard' component={Dashboard} />
+        {/* <SecureRoute exact path="/dashboard" component={VerifyUser} /> */}
+        <SecureRoute path='/dashboard' component={Dashboard} />
         <Route path='/mentor-registration' component={MentorRegistration} />
       </Router>
     </div>
