@@ -12,6 +12,7 @@ import '../../sass/dashboard.scss'
 import Navbar from "../navigation/Navbar";
 import UserDashboard from "../dashboards/UserDashboard";
 import UserProfile from "../profile/UserProfile";
+import VerifyUser from './VerifyUser';
 
 const Dashboard = () => {
   const currentUser = useSelector(state => state.authReducer.user)
@@ -20,6 +21,7 @@ const Dashboard = () => {
   return (
     <div className="dashContainer">
       <Navbar />
+      <VerifyUser />
       <div>
         <Switch>
           <Route path={`${path}/calendar`}>
