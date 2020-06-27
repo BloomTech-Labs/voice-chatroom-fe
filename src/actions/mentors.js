@@ -49,7 +49,6 @@ export const actionCreators = {
 }
 
 export const registerMentor = (newMentor, mentor_id) => dispatch => {
-    const history = useHistory()
     axiosWithAuth()
         .post('/mentors/', newMentor)
         .then(res => {
@@ -62,7 +61,7 @@ export const registerMentor = (newMentor, mentor_id) => dispatch => {
                     .put(`/users/${mentor_id}`, {
                         isMentor: true
                     })
-                    .then(res => history.push('/dashboard'))
+                    .then()
                     .catch(err => console.log(err))
             }
         })
