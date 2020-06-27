@@ -1,4 +1,5 @@
-import AxiosWithAuth from './components/utils/AxiosWithAuth';
+import { axiosWithAuth } from '../components/utils/axiosWithAuth';
+import { useHistory } from 'react-router-dom';
 
 export const FETCH_USER_REQUEST = 'FETCH_USER_REQUEST';
 export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
@@ -29,7 +30,7 @@ export const getAllMentors = () => dispatch => {
     console.log('dispatch?')
     dispatch({ type: FETCH_ALL_REQUEST })
 
-        AxiosWithAuth().get(`/users`)
+        axiosWithAuth().get(`/users`)
             .then(res =>{
             console.log(res.data)
             dispatch({ type: FETCH_ALL_SUCCESS,
@@ -45,4 +46,30 @@ export const getAllMentors = () => dispatch => {
 
 export const actionCreators = {
     getAllMentors,
+}
+
+export const registerMentor = (newMentor, mentor_id) => dispatch => {
+    const history = useHistory()
+    axiosWithAuth()
+        .post('/mentors/', newMentor)
+        .then(res => {
+            dispatch({
+                type: ADD_MENTOR_SUCCESS,
+                payload: res.data
+            })
+            if(res.status === 201){
+                axiosWithAuth()
+                    .put(`/users/${mentor_id}`, {
+                        isMentor: true
+                    })
+                    .then(res => history.push('/dashboard'))
+                    .catch(err => console.log(err))
+            }
+        })
+        .catch(err => {
+            dispatch({
+                type: ADD_MENTOR_FAILURE,
+                payload: err
+            })
+        })
 }
