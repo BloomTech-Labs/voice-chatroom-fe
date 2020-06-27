@@ -49,6 +49,7 @@ export const actionCreators = {
 }
 
 export const registerMentor = (newMentor, mentor_id) => dispatch => {
+    console.log(newMentor, mentor_id)
     axiosWithAuth()
         .post('/mentors/', newMentor)
         .then(res => {
