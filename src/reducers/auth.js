@@ -17,6 +17,7 @@ export const initialState = {
         user_bio: "",
         user_rating: 0
     },
+    isAuthenticated: false,
     isLoading: false,
     isLoggedIn: false,
     error: null
