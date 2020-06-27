@@ -15,7 +15,6 @@ import UserProfile from "../profile/UserProfile";
 import VerifyUser from './VerifyUser';
 
 const Dashboard = () => {
-  const currentUser = useSelector(state => state.authReducer.user)
   const { path } = useRouteMatch();
 
   return (
