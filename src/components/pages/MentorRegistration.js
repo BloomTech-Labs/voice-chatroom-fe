@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useHistory } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import '../../sass/mentorRegistration.scss'
 
 import { axiosWithAuth } from '../utils/axiosWithAuth'
+import { registerMentor } from '../../actions/mentors'
 
 import plus from '../assets/plus.png'
 
@@ -13,6 +14,7 @@ const MentorRegistration = () => {
     const {register, handleSubmit, watch, errors} = useForm();
     const [categoryNumber, setCategoryNumber] = useState(1)
     const currentUser = useSelector(state => state.authReducer.user)
+    const dispatch = useDispatch()
     let history = useHistory()
 
     const addCategory = e => {
@@ -29,24 +31,26 @@ const MentorRegistration = () => {
             category_3: values.category_3,
             mentor_bio: values.mentor_bio
         }
+
+        dispatch(registerMentor(mentor, currentUser.id))
         
-        axiosWithAuth()
-            .post('/mentors/', mentor)
-            .then(res => {
-                console.log(res.status)
-                if(res.status === 201){
-                    axiosWithAuth()
-                        .put(`/users/${currentUser.id}`, {
-                            isMentor: true
-                        })
-                        .then(res => {
-                            history.push('/dashboard')
-                        })
-                        .catch(err => console.log(err))
-                }
+        // axiosWithAuth()
+        //     .post('/mentors/', mentor)
+        //     .then(res => {
+        //         console.log(res.status)
+        //         if(res.status === 201){
+        //             axiosWithAuth()
+        //                 .put(`/users/${currentUser.id}`, {
+        //                     isMentor: true
+        //                 })
+        //                 .then(res => {
+        //                     history.push('/dashboard')
+        //                 })
+        //                 .catch(err => console.log(err))
+        //         }
                 
-            })
-            .catch(error => console.log(error))
+        //     })
+        //     .catch(error => console.log(error))
     }
 
     return (
