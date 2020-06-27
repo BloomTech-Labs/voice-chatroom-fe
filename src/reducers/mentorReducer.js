@@ -26,5 +26,4 @@ export default function mentorReducer(state = initialState, action){
         default:
             return state
     }
-    
 }
