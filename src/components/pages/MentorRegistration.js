@@ -34,24 +34,6 @@ const MentorRegistration = () => {
 
         dispatch(registerMentor(mentor, currentUser.id))
         history.push('/dashboard')
-        
-        // axiosWithAuth()
-        //     .post('/mentors/', mentor)
-        //     .then(res => {
-        //         console.log(res.status)
-        //         if(res.status === 201){
-        //             axiosWithAuth()
-        //                 .put(`/users/${currentUser.id}`, {
-        //                     isMentor: true
-        //                 })
-        //                 .then(res => {
-        //                     history.push('/dashboard')
-        //                 })
-        //                 .catch(err => console.log(err))
-        //         }
-                
-        //     })
-        //     .catch(error => console.log(error))
     }
 
     return (
