@@ -29,10 +29,15 @@ export const userLoginOrRegister = (oktaAuthState, oktaAuthService) => dispatch 
                             family_name: info.family_name
                         })
                         .then(res => {
-                            dispatch({
-                                type: userConstants.LOGIN_SUCCESS,
-                                payload: res.data[0]
-                            })
+                            axiosWithAuth()
+                                .post('users/email', {email: info.email})
+                                .then(response => {
+                                    dispatch({
+                                        type: userConstants.LOGIN_SUCCESS,
+                                        payload: response.data[0]
+                                    })
+                                })
+                                .catch(err => console.log(err))
                         })
                         .catch(err => console.log('error in user post', err))
                 }
