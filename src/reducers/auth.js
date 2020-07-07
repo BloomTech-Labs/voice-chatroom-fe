@@ -32,7 +32,6 @@ export default function authReducer(state = initialState, action){
                 error: null               
             };
         case userConstants.LOGIN_SUCCESS:
-            console.log(action)
             return {
                 ...state,
                 user: action.payload,
