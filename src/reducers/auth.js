@@ -47,7 +47,6 @@ export default function authReducer(state = initialState, action){
                 error: 'Failed to log in'
             };
         case userConstants.LOGOUT:
-            console.log('logout')
             return {
                 ...state,
                 isLoading: false,
