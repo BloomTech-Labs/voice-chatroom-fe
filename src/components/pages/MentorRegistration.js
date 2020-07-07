@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import '../../sass/mentorRegistration.scss'
 
-import { axiosWithAuth } from '../utils/axiosWithAuth'
 import { registerMentor } from '../../actions/mentors'
 
 import plus from '../assets/plus.png'
