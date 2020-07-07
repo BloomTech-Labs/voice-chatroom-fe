@@ -15,5 +15,5 @@ useOktaAuth.mockReturnValue({
 
 it('should render button', () => {
     const { getByText } = render(< Login />);
-    expect(getByText("Login")).toBeInTheDocument();
+    expect(getByText("Login / Register")).toBeInTheDocument();
 });
