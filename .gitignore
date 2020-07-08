@@ -5,4 +5,7 @@ package-lock.json
 # dependencies
 /node_modules
 
+# Coverage
+/coverage
+
 *.env
