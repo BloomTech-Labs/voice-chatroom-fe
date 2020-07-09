@@ -1,79 +1,107 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-
+import { useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import plus from "../assets/plus.png";
 
-export default function UserProfile() {
-  const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (data) => console.log(data);
+import { editUser } from "../../actions/users";
 
+export default function UserProfile() {
+  const { register, handleSubmit, errors, getValues } = useForm();
+  const dispatch = useDispatch();
+  const currentUser = useSelector((state) => state.authReducer.user);
   const [categoryNumber, setCategoryNumber] = useState(1);
+  let history = useHistory();
 
   const addCategory = (e) => {
     e.preventDefault();
     setCategoryNumber(categoryNumber + 1);
   };
 
+  const submitUserInfo = values => dispatch(editUser(currentUser.id, values)) 
+
+  console.log(localStorage)
+  
   return (
     <div className="mentorRegistration">
-      <form className="mentorRegisterForm" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="mentorRegisterForm"
+        onChange={ (e) => console.log(e.target.value)}
+        onSubmit={() => {
+          let values = getValues();
+          submitUserInfo(values);
+          history.push('/dashboard/calendar')
+        }}
+      >
         <label>
-            First Name:
+          First Name:
           <input
             type="text"
-            placeholder="First name"
-            name="First name"
+            defaultValue={currentUser.given_name}
+            name="given_name"
             ref={register({ required: true, maxLength: 80 })}
           />
         </label>
         <label>
-        Last Name:
+          Last Name:
           <input
             type="text"
-            placeholder="Last name"
-            name="Last name"
+            defaultValue={currentUser.family_name}
+            name="family_name"
             ref={register({ required: true, maxLength: 100 })}
           />
         </label>
         <label>
-            Username:
+          Username:
           <input
             type="text"
-            placeholder="Username"
-            name="Username"
+            defaultValue={currentUser.username}
+            name="username"
             ref={register({ required: true, pattern: /^\S+@\S+$/i })}
           />
         </label>
         <label>
-            Location:
+          Location:
           <input
             type="text"
-            placeholder="Location"
-            name="Location"
+            defaultValue={currentUser.location}
+            name="location"
             ref={register}
           />
         </label>
         <label>
-            Bio:
-
+          Bio:
           <textarea name="Bio" ref={register} />
         </label>
         {categoryNumber > 0 && (
           <label>
             Main Interest:
-            <input name="category_1" ref={register({ required: true })} />
+            <input
+              name="interest_1"
+              defaultValue={currentUser.interest_1}
+              ref={register({ required: true })}
+            />
           </label>
         )}
         {categoryNumber > 1 && (
           <label>
             Secondary Interest
-            <input name="category_2" ref={register} />
+            <input
+              name="interest_2"
+              defaultValue={currentUser.interest_2}
+              ref={register}
+            />
           </label>
         )}
         {categoryNumber > 2 && (
           <label>
             Third Interest
-            <input name="category_3" ref={register} />
+            <input
+              name="interest_3"
+              defaultValue={currentUser.interest_3}
+              ref={register}
+            />
           </label>
         )}
         {categoryNumber < 3 && (
@@ -87,9 +115,9 @@ export default function UserProfile() {
         <input
           type="submit"
           className="mentorRegisterSubmit"
-          value="Save Profile"
         />
       </form>
     </div>
   );
 }
+
