@@ -18,21 +18,20 @@ export default function UserProfile() {
     e.preventDefault();
     setCategoryNumber(categoryNumber + 1);
   };
+  let values = getValues();
 
-  const submitUserInfo = values => dispatch(editUser(currentUser.id, values)) 
+  const submitUserInfo = values => {
+    dispatch(editUser(currentUser.id, values))
+  }
 
-  console.log(localStorage)
-  
+
   return (
     <div className="mentorRegistration">
       <form
         className="mentorRegisterForm"
-        onChange={ (e) => console.log(e.target.value)}
-        onSubmit={() => {
-          let values = getValues();
-          submitUserInfo(values);
-          history.push('/dashboard/calendar')
-        }}
+        onSubmit={
+          handleSubmit(submitUserInfo(values))
+        }
       >
         <label>
           First Name:
@@ -40,6 +39,15 @@ export default function UserProfile() {
             type="text"
             defaultValue={currentUser.given_name}
             name="given_name"
+            ref={register({ required: true, maxLength: 80 })}
+          />
+        </label>
+        <label>
+          Email:
+          <input
+            type="text"
+            defaultValue={currentUser.email}
+            name="email"
             ref={register({ required: true, maxLength: 80 })}
           />
         </label>
@@ -72,7 +80,7 @@ export default function UserProfile() {
         </label>
         <label>
           Bio:
-          <textarea name="Bio" ref={register} />
+          <textarea name="user_bio" ref={register} />
         </label>
         {categoryNumber > 0 && (
           <label>
@@ -117,7 +125,7 @@ export default function UserProfile() {
           className="mentorRegisterSubmit"
         />
       </form>
-    </div>
+    </div >
   );
 }
 

@@ -30,7 +30,6 @@ export const getAllUsers = () => (dispatch) => {
   axiosWithAuth()
     .get(`/users`)
     .then((res) => {
-      console.log(res.data);
       dispatch({ type: FETCH_ALL_SUCCESS, payload: res.data });
     })
     .catch((error) => {
@@ -39,17 +38,15 @@ export const getAllUsers = () => (dispatch) => {
 };
 
 export const editUser = (id, info) => (dispatch) => {
-  console.log("dispatch?");
   dispatch({ type: SET_LOADING });
 
   axiosWithAuth()
     .put(`/users/${id}`, info)
     .then((res) => {
-      console.log(res.data);
       dispatch({ type: EDIT_USER_SUCCESS, payload: res.data });
     })
     .catch((error) => {
-      dispatch({ type: EDIT_USER_FAILURE });
+      dispatch({ type: EDIT_USER_FAILURE, payload: error.message });
     });
 };
 
