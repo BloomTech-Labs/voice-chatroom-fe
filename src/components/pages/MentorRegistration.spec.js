@@ -1,21 +1,11 @@
 import React from 'react'
+import { createStore } from 'redux'
+import { render, fireEvent, screen } from '../utils/auth-test-utils'
+import '@testing-library/jest-dom/extend-expect'
 import MentorRegistration from './MentorRegistration'
-import { configure, shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 
-configure({ adapter: new Adapter() })
 
-// test("renders mentor registration form", async () => {
-//     const { getByText } = render(<MentorRegistration />);
-//     const form = getByText(/Mentor Name/i);
-//     expect(form).toBeInTheDocument();
-// })
-
-describe('<MentorRegistration />', () => {
-    it('should render MentorRegistration', () => {
-        const props = {
-            currentUser: {}
-        }
-        const wrapper = shallow(<MentorRegistration />)
-    })
+test('renders with mentor name field', () => {
+    render(<MentorRegistration />)
+    expect(screen.findByLabelText('Mentor Name')).toHaveTextContent('Mentor Name')
 })
