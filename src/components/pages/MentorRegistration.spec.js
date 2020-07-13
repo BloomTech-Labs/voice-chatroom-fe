@@ -1,20 +1,36 @@
 import React from 'react'
-import { shallow, configure } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
+import { render, fireEvent, getByDisplayValue } from '@testing-library/react'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import authReducer  from '../../reducers/auth'
+
 import MentorRegistration from './MentorRegistration'
 
-import { Provider } from 'react-redux';
-import store from '../../utils/store';
 
-configure({ adapter: new Adapter() })
 
-describe('<MentorRegistration />', () => {
-    test("should render Mentor Registration form", () => {
-        const wrapper = shallow(
-            <Provider store={store}>
-                <MentorRegistration />
-            </Provider>
-        )
-        console.log(wrapper.debug())    
-    })
+function renderWithRedux(
+    ui,
+    { initialState, store = createStore(authReducer, initialState) } = {}
+) {
+    return {
+    ...render(<Provider store={store}>{ui}</Provider>), store
+    }
+}
+
+test('should render mentor name field', () => {
+    const wrapper = renderWithRedux(<MentorRegistration />)
+    const mentorNameLabel = wrapper.queryByLabelText('Mentor Name')
+    expect(mentorNameLabel).toBeInTheDocument()
+})
+
+test('should render mentor category 1 field', () => {
+    const wrapper = renderWithRedux(<MentorRegistration />)
+    const mentorCategory1 = wrapper.queryByLabelText('Mentor Category 1')
+    expect(mentorCategory1).toBeInTheDocument()
+})
+
+test('should render mentor bio field', () => {
+    const wrapper = renderWithRedux(<MentorRegistration />)
+    const mentorBioLabel = wrapper.queryByLabelText('Bio')
+    expect(mentorBioLabel).toBeInTheDocument()
 })
