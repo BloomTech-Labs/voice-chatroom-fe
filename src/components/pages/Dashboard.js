@@ -4,7 +4,6 @@ import {
   Switch,
   useRouteMatch,
 } from "react-router-dom";
-import { useSelector } from 'react-redux'
 
 import '../../sass/dashboard.scss'
 
