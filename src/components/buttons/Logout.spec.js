@@ -7,8 +7,6 @@ import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 jest.mock("@okta/okta-react");
 
-
-
 const logout = jest.fn();
 
 useOktaAuth.mockReturnValue({
@@ -17,13 +15,11 @@ useOktaAuth.mockReturnValue({
     },
 });
 
-
 it('should handle ClickEvents', () => {
     const { getByText } = render(<Logout />);
     fireEvent.click(getByText('Log Out'))
     expect(logout).toHaveBeenCalledTimes(1);
 });
-
 
 it('should render button', () => {
     const { getByText } = render(< Logout />);

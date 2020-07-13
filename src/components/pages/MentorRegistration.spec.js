@@ -1,12 +1,10 @@
 import React from 'react'
-import { render, fireEvent, getByDisplayValue } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import authReducer  from '../../reducers/auth'
 
 import MentorRegistration from './MentorRegistration'
-
-
 
 function renderWithRedux(
     ui,
@@ -33,4 +31,17 @@ test('should render mentor bio field', () => {
     const wrapper = renderWithRedux(<MentorRegistration />)
     const mentorBioLabel = wrapper.queryByLabelText('Bio')
     expect(mentorBioLabel).toBeInTheDocument()
+})
+
+test('should add category fields', () => {
+    const wrapper = renderWithRedux(<MentorRegistration />)
+
+    fireEvent.click(wrapper.getByAltText('plus sign'))
+    fireEvent.click(wrapper.getByAltText('plus sign'))
+
+    const mentorCategory2 = wrapper.queryByLabelText('Mentor Category 2')
+    expect(mentorCategory2).toBeInTheDocument()
+
+    const mentorCategory3 = wrapper.queryByLabelText('Mentor Category 3')
+    expect(mentorCategory3).toBeInTheDocument()
 })
