@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import '../../sass/mentorRegistration.scss'
 
-import { axiosWithAuth } from '../utils/axiosWithAuth'
 import { registerMentor } from '../../actions/mentors'
 
 import plus from '../assets/plus.png'
@@ -13,7 +12,7 @@ import plus from '../assets/plus.png'
 const MentorRegistration = () => {
     const {register, handleSubmit, watch, errors} = useForm();
     const [categoryNumber, setCategoryNumber] = useState(1)
-    const currentUser = useSelector(state => state.authReducer.user)
+    const currentUser = useSelector(state => state.authReducer)
     const dispatch = useDispatch()
     let history = useHistory()
 
@@ -24,7 +23,7 @@ const MentorRegistration = () => {
 
     const submitMentorRegistration = (values) => {
         const mentor = {
-            mentor_id: currentUser.id,
+            mentor_id: currentUser.user.id,
             mentor_name: values.mentor_name,
             category_1: values.category_1,
             category_2: values.category_2,
@@ -32,12 +31,12 @@ const MentorRegistration = () => {
             mentor_bio: values.mentor_bio
         }
 
-        dispatch(registerMentor(mentor, currentUser.id))
+        dispatch(registerMentor(mentor, currentUser.user.id))
         history.push('/dashboard')
     }
 
     return (
-        <div className="mentorRegistration">
+        <div className="mentorRegistration">Mentor Registration
             <form className="mentorRegisterForm" onSubmit={handleSubmit(submitMentorRegistration)}>
                 <label>Mentor Name
                     <input
