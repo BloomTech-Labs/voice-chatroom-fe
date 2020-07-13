@@ -12,7 +12,7 @@ describe('My Test Suite', () => {
   });
 });
 
-describe('First React component test with Enzyme', () =>{
+describe('App Renders Without Crashing', () =>{
   it('renders without crashing', () =>{
     shallow(<App />);
   });
