@@ -31,6 +31,6 @@ describe('User profile renders without crashing', () =>{
     expect(wrapper.find('form')).toHaveLength(1)
   });
 
-  it('Should render 8 <input>s', () =>{
-    expect(wrapper.find('input')).toHaveLength(8)
+  it('Should render 6 <input>s', () =>{
+    expect(wrapper.find('input')).toHaveLength(6)
   });
