@@ -10,13 +10,27 @@ global.MutationObserver = window.MutationObserver;
 
 configure({ adapter: new Adapter() });
 
+let wrapper;
+
+beforeEach( () =>{
+  wrapper = mount(<UserProfile />)
+});
+
 describe('User profile renders without crashing', () =>{
     it('renders without crashing', () =>{
-        shallow(<UserProfile />);
+        mount(<UserProfile />);
     });
   });
   
-  it('should render label', () => {
-    const { getByText } = render(<UserProfile />);
-    expect(getByText("First name")).toBeInTheDocument();
-});
+
+  it('Should render 7 <label>s', () =>{
+    expect(wrapper.find('label')).toHaveLength(7)
+  });
+
+  it('Should render 1 <form>', () =>{
+    expect(wrapper.find('form')).toHaveLength(1)
+  });
+
+  it('Should render 8 <input>s', () =>{
+    expect(wrapper.find('input')).toHaveLength(8)
+  });
