@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { connect } from "react-redux";
@@ -8,9 +7,10 @@ import plus from "../assets/plus.png";
 import { editUser } from "../../actions/users";
 
 export default function UserProfile() {
-  const { register, handleSubmit, errors, getValues } = useForm();
+ 
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.authReducer.user);
+  const [formInfo, setFormInfo] = useState(currentUser)
   const [categoryNumber, setCategoryNumber] = useState(1);
   let history = useHistory();
 
@@ -19,20 +19,18 @@ export default function UserProfile() {
     setCategoryNumber(categoryNumber + 1);
   };
 
-  const submitUserInfo = (values) => dispatch(editUser(currentUser.id, values));
+  const submitUserInfo = values => dispatch(editUser(currentUser.id, values)) 
 
-  console.log(localStorage);
-
+  console.log(localStorage)
+  
   return (
     <div className="mentorRegistration">
       <form
         className="mentorRegisterForm"
-        onChange={(e) => console.log(e.target.value)}
-        onSubmit={(e) => {
-          e.preventDefault();
-          let values = getValues();
+        onChange={ (e) => console.log(e.target.value)}
+        onSubmit={() => {
           submitUserInfo(values);
-          // history.push("/dashboard/calendar");
+          history.push('/dashboard/calendar')
         }}
       >
         <label>
@@ -73,11 +71,7 @@ export default function UserProfile() {
         </label>
         <label>
           Bio:
-          <textarea
-            name="user_bio"
-            defaultValue={currentUser.user_bio}
-            ref={register}
-          />
+          <textarea name="Bio" ref={register} />
         </label>
         {categoryNumber > 0 && (
           <label>
@@ -120,9 +114,9 @@ export default function UserProfile() {
         <input
           type="submit"
           className="mentorRegisterSubmit"
-          value="Save Changes"
         />
       </form>
     </div>
   );
 }
+
