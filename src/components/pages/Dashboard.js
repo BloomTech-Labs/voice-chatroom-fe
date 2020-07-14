@@ -1,17 +1,14 @@
 import React from "react";
-import {
-  Route,
-  Switch,
-  useRouteMatch,
-} from "react-router-dom";
+import { Route, Switch, useRouteMatch } from "react-router-dom";
 
-import '../../sass/dashboard.scss'
+import "../../sass/dashboard.scss";
 
 //importing Components
 import Navbar from "../navigation/Navbar";
 import UserDashboard from "../dashboards/UserDashboard";
 import UserProfile from "../profile/UserProfile";
-import VerifyUser from './VerifyUser';
+import VerifyUser from "./VerifyUser";
+import CalendarPage from "./CalendarPage";
 
 const Dashboard = () => {
   const { path } = useRouteMatch();
@@ -23,10 +20,13 @@ const Dashboard = () => {
       <div>
         <Switch>
           <Route path={`${path}/calendar`}>
-            <UserDashboard />
+            <CalendarPage />
           </Route>
           <Route path={`${path}/profile`}>
             <UserProfile />
+          </Route>
+          <Route path={`${path}`}>
+            <UserDashboard />
           </Route>
         </Switch>
       </div>
