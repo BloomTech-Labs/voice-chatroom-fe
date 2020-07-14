@@ -12,11 +12,12 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: '12'
+          node-version: '14.3.0'
       - run: npm install
       - uses: paambaati/codeclimate-action@v2.4.0
         env:
           CC_TEST_REPORTER_ID: '${{ secrets.TEST_REPORTER_ID }}'
+          CI: true
         with:
           coverageCommand: npm run coverage
           coverageLocations: './coverage/clover.xml:clover'
