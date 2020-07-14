@@ -16,7 +16,13 @@ jobs:
       - run: npm install
       - uses: paambaati/codeclimate-action@v2.4.0
         env:
-          CC_TEST_REPORTER_ID: '${{ secrets.TEST_REPORTER_ID }}'
+          CC_TEST_REPORTER_ID: ${{ secrets.TEST_REPORTER_ID }}
+
+          DB_URL: ${{ secrets.DB_URL }}
+          REACT_APP_CLIENT_ID: ${{ secrets.REACT_APP_CLIENT_ID }}
+          REACT_APP_OKTA_DOMAIN: ${{ secrets.REACT_APP_OKTA_DOMAIN }}
+          SKIP_PREFLIGHT_CHECK: ${{ secrets.SKIP_PREFLIGHT_CHECK }}
+          CI: true
         with:
           coverageCommand: npm run coverage
           coverageLocations: './coverage/clover.xml:clover'
