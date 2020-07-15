@@ -17,7 +17,7 @@ const Dashboard = () => {
     <div className="dashContainer">
       <Navbar />
       <VerifyUser />
-      <div>
+      <>
         <Switch>
           <Route path={`${path}/calendar`}>
             <CalendarPage />
@@ -29,7 +29,7 @@ const Dashboard = () => {
             <UserDashboard />
           </Route>
         </Switch>
-      </div>
+      </>
     </div>
   );
 };

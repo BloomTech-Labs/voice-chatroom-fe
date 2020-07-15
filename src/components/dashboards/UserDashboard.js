@@ -20,19 +20,17 @@ function UserDashboard() {
 
   return (
     <div className="dash-container">
-      <div className="top">
-        <div className="top-left">
-          <UserHeader user={currentUser} />
-          Your Rating:{" "}
-          <StarRatingComponent
-            name="userRating"
-            starCount={5}
-            // value={currentUser.rating}
-          />
-        </div>
-        <div className="top-right">
-          <Calendar class="calendar" onChange={onChange} value={date} />
-        </div>
+      <div className="top-left">
+        <UserHeader user={currentUser} />
+        Your Rating:{" "}
+        <StarRatingComponent
+          name="userRating"
+          starCount={5}
+          // value={currentUser.rating}
+        />
+      </div>
+      <div className="top-right">
+        <Calendar class="calendar" onChange={onChange} value={date} />
       </div>
 
       {/* {interests.forEach((item) => item)} */}

@@ -1,14 +1,13 @@
 .dash-container {
   margin: 5%;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  .top {
-    display: flex;
-    width: 140%;
-
-    .top-left {
-      width: 150%;
-      font-size: 40px;
-      color: #2a475e;
-    }
+  .top-left {
+    font-size: 40px;
+    color: #2a475e;
   }
 }
