@@ -22,18 +22,11 @@ const Dashboard = () => {
 
   const currentUser = useSelector(state => state.authReducer.user)
 
-  useEffect(()=> {
-    dispatch(getAMentor(currentUser.id))
-    console.log('useEffect')
-  }, [])
-
   const { path } = useRouteMatch();
-
-  const dispatch = useDispatch()
   
   // selecting mentor from redux store
   const currentMentor = useSelector(state => state.mentorReducer.mentor)
-
+  console.log("dasboard mentor", currentMentor)
   return (
     <div className="dashContainer">
       <Navbar />
@@ -46,7 +39,7 @@ const Dashboard = () => {
           <Route path={`${path}/profile`}>
             <UserProfile />
           </Route>
-          <Route path={`${path}/mentor/${currentMentor.mentor_name}/profile`}>
+          <Route path={`${path}/mentor/profile`}>
             <MentorProfile />
           </Route>
         </Switch>

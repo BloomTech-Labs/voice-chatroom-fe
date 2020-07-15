@@ -36,7 +36,7 @@ const Navbar = () => {
       ) : (
         <nav className="mentorNav">
           <Link
-          to={`${url}/mentor/${currentMentor.mentor_name}/profile`}
+          to={`${url}/mentor/profile`}
           replace
         >
          Mentor Profile

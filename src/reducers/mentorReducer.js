@@ -32,7 +32,7 @@ export default function mentorReducer(state = initialState, action) {
     case FETCH_MENTOR_SUCCESS:
       return {
         ...state,
-        mentors: action.payload,
+        mentor: action.payload,
         error: null,
       };
     default:

@@ -50,8 +50,8 @@ export const getAMentor = (id) => (dispatch) => {
     .get("/mentors")
     .then((res) => {
       console.log(res);
-      let mentors = res.data;
-      let mentor = mentors.find(element => element.mentor_id === id);
+      console.log(id)
+      let mentor = res.data.find(element => element.mentor_id === id);
       console.log('mentor', mentor)
 
       dispatch({ type: FETCH_MENTOR_SUCCESS, payload: mentor });
