@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { connect } from "react-redux";
 import plus from "../assets/plus.png";
 
 import { editUser } from "../../actions/users";
@@ -19,7 +18,10 @@ export default function UserProfile() {
     setCategoryNumber(categoryNumber + 1);
   };
 
-  const submitUserInfo = (values) => dispatch(editUser(currentUser.id, values));
+  const submitUserInfo = values => {
+    dispatch(editUser(currentUser.id, values))
+    history.push('/dashboard/calender')
+  }
 
   console.log(localStorage);
 

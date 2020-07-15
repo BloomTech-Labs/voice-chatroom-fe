@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 
-import '../../sass/dashboard.scss'
+import "../../sass/dashboard.scss";
 
 //importing Components
 import Navbar from "../navigation/Navbar";
@@ -14,6 +14,7 @@ import UserDashboard from "../dashboards/UserDashboard";
 import UserProfile from "../profile/UserProfile";
 import VerifyUser from './VerifyUser';
 import MentorProfile from "../profile/MentorProfile";
+import CalendarPage from "./CalendarPage";
 
 const Dashboard = () => {
   //selecting user from redux store
@@ -26,14 +27,14 @@ const Dashboard = () => {
 
   console.log("dasboard mentor", currentMentors)
   return (
-    <div className="dashContainer">
+    <div className="dashContainer" data-test="dashboard">
       <Navbar />
      <VerifyUser /> 
-     { currentUser.id === 0 && 
+     { currentUser.id !== 0 && 
       <div>
         <Switch>
           <Route path={`${path}/calendar`}>
-            <UserDashboard />
+            <CalendarPage />
           </Route>
           <Route path={`${path}/profile`}>
             <UserProfile />

@@ -5,8 +5,14 @@ import StarRatingComponent from "react-star-rating-component";
 
 import UserHeader from "./UserHeader";
 
+import "react-calendar/dist/Calendar.css";
+
+import "../../sass/userDashboard.scss";
+
 function UserDashboard() {
   const [date, setDate] = useState(new Date());
+  const [interests, setInterests] = useState([]);
+  const currentUser = useSelector((state) => state.authReducer.user);
 
   const currentUser = useSelector((state) => state.authReducer.user);
   const [interests, setInterests] = useState([
@@ -19,11 +25,9 @@ function UserDashboard() {
   };
 
   return (
-    <div>
-      <UserHeader user={currentUser} />
-      <Calendar onChange={onChange} value={date} />
-      {date.toString()}
-      <div>
+    <div className="dash-container">
+      <div className="top-left">
+        <UserHeader user={currentUser} />
         Your Rating:{" "}
         <StarRatingComponent
           name="userRating"
@@ -31,7 +35,11 @@ function UserDashboard() {
           value={currentUser.rating}
         />
       </div>
-      {interests.forEach((item) => item)}
+      <div className="top-right">
+        <Calendar class="calendar" onChange={onChange} value={date} />
+      </div>
+
+      {/* {interests.forEach((item) => item)} */}
     </div>
   );
 }
