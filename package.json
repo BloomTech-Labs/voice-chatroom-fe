@@ -37,7 +37,7 @@
     "yup": "^0.29.1"
   },
   "scripts": {
-  "start": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage --watchAll=false",
     "test:watch": "npm run test -- --watch",
