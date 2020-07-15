@@ -10,10 +10,14 @@ const Homepage = () => {
         <section className="home">
 
             <div className="hometop">
-                <h3>Welcome to Wyzer Mentoring</h3>
+                <h3 className="welcome">Welcome to Wyzer Mentoring</h3>
                 <h3 className="what">
                     What is Mentoring?   
                 </h3>
+                <p className="description">Mentoring is a reciprocal and collaborative at-will relationship that most often 
+                    occurs between a mentor and mentee for the purpose of the mentee’s growth, 
+                    learning, and career development. </p>
+                <p>In simpler terms? Mentoring is like untangling tangled thought patterns and methods to help guide an individual to a smoother path to success!</p>
                 <img className="thread" src={thread} alt="" />
             </div>
 
