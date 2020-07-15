@@ -11,13 +11,14 @@ const Homepage = () => {
 
             <div className="hometop">
                 <h3>Welcome to Wyzer Mentoring</h3>
-            </div>
-
-            <div className="midhome">
-                <h3>
+                <h3 className="what">
                     What is Mentoring?   
                 </h3>
                 <img className="thread" src={thread} alt="" />
+            </div>
+
+            <div className="midhome">
+                
             </div>
     
             <div>
