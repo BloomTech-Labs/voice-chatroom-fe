@@ -12,8 +12,13 @@ header {
         font-size: 3rem;
         margin-left: 3%;
         text-shadow: 2px 2px black;
+    
     }
 
+     a{
+        text-decoration: none;
+        color:#FFC857
+    }
     button {
         margin-right: 3%;
         width: 15%;
@@ -30,4 +35,6 @@ header {
         background-color: rgb(221, 169, 64);
         box-shadow: 4px 5px black;
     }
+
+    
 }

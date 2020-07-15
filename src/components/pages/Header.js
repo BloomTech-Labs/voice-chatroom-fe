@@ -12,7 +12,8 @@ const Header = () => {
 
   return (
     <header>
-      <h1>Wyzer</h1>
+      <h1>
+        <Link to="/dashboard">Wyzer</Link></h1>
 
       {authState.isAuthenticated ? <Logout /> : <Login />}
     </header>
