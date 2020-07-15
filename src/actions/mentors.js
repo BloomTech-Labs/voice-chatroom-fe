@@ -1,6 +1,4 @@
 import { axiosWithAuth } from "../components/utils/axiosWithAuth";
-import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 export const FETCH_MENTOR_REQUEST = "FETCH_MENTOR_REQUEST";
 export const FETCH_MENTOR_SUCCESS = "FETCH_MENTOR_SUCCESS";
@@ -26,13 +24,11 @@ export const SET_LOADING = "SET_LOADING";
 
 // Dispatch functions here
 export const getAllMentors = () => (dispatch) => {
-  console.log("dispatch?");
   dispatch({ type: SET_LOADING });
 
   axiosWithAuth()
     .get(`/mentors`)
     .then((res) => {
-      console.log(res.data);
       dispatch({ type: FETCH_MENTOR_SUCCESS, payload: res.data });
     })
     .catch((error) => {
@@ -43,17 +39,12 @@ export const getAllMentors = () => (dispatch) => {
 // repeat for any functions used :)
 
 export const getAMentor = (id) => (dispatch) => {
-  console.log("dispatch?");
   dispatch({ type: SET_LOADING });
 
   axiosWithAuth()
     .get("/mentors")
     .then((res) => {
-      console.log(res);
-      console.log(id)
       let mentor = res.data.find(element => element.mentor_id === id);
-      console.log('mentor', mentor)
-
       dispatch({ type: FETCH_MENTOR_SUCCESS, payload: mentor });
     })
     .catch((error) => {
@@ -75,7 +66,6 @@ export const editMentor = (id, info) => (dispatch) => {
 };
 
 export const registerMentor = (newMentor, mentor_id) => (dispatch) => {
-  console.log(newMentor, mentor_id);
   axiosWithAuth()
     .post("/mentors/", newMentor)
     .then((res) => {

@@ -10,7 +10,6 @@ export default function UserProfile() {
  
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.authReducer.user);
-  const [formInfo, setFormInfo] = useState(currentUser)
   const [categoryNumber, setCategoryNumber] = useState(1);
   let history = useHistory();
 
@@ -20,14 +19,11 @@ export default function UserProfile() {
   };
 
   const submitUserInfo = values => dispatch(editUser(currentUser.id, values)) 
-
-  console.log(localStorage)
   
   return (
     <div className="mentorRegistration">
       <form
         className="mentorRegisterForm"
-        onChange={ (e) => console.log(e.target.value)}
         onSubmit={() => {
           submitUserInfo(values);
           history.push('/dashboard/calendar')

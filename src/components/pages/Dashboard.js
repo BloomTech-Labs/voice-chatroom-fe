@@ -25,7 +25,6 @@ const Dashboard = () => {
   // selecting mentors from redux store
   const currentMentors = useSelector(state => state.mentorReducer.mentors)
 
-  console.log("dasboard mentor", currentMentors)
   return (
     <div className="dashContainer" data-test="dashboard">
       <Navbar />

@@ -23,13 +23,10 @@ export default function UserProfile() {
     history.push('/dashboard/calender')
   }
 
-  console.log(localStorage);
-
   return (
     <div className="mentorRegistration">
       <form
         className="mentorRegisterForm"
-        onChange={(e) => console.log(e.target.value)}
         onSubmit={(e) => {
           e.preventDefault();
           let values = getValues();
