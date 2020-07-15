@@ -33,6 +33,7 @@ export default function mentorReducer(state = initialState, action) {
       return {
         ...state,
         mentor: action.payload,
+        mentors: action.payload,
         error: null,
       };
     default:

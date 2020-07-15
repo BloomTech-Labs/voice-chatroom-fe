@@ -32,7 +32,7 @@ export default function UserProfile() {
           e.preventDefault();
           let values = getValues();
           submitUserInfo(values);
-          // history.push("/dashboard/calendar");
+          history.push("/dashboard/calendar");
         }}
       >
         <label>

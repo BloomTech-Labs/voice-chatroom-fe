@@ -1,4 +1,4 @@
-import React , { useEffect } from "react";
+import React , { useState } from "react";
 import {
   Route,
   Switch,
@@ -15,22 +15,21 @@ import UserProfile from "../profile/UserProfile";
 import VerifyUser from './VerifyUser';
 import MentorProfile from "../profile/MentorProfile";
 
-import { getAMentor } from '../../actions/mentors'
-
-
 const Dashboard = () => {
-
+  //selecting user from redux store
   const currentUser = useSelector(state => state.authReducer.user)
 
   const { path } = useRouteMatch();
   
-  // selecting mentor from redux store
-  const currentMentor = useSelector(state => state.mentorReducer.mentor)
-  console.log("dasboard mentor", currentMentor)
+  // selecting mentors from redux store
+  const currentMentors = useSelector(state => state.mentorReducer.mentors)
+
+  console.log("dasboard mentor", currentMentors)
   return (
     <div className="dashContainer">
       <Navbar />
-      <VerifyUser />
+     <VerifyUser /> 
+     { currentUser.id === 0 && 
       <div>
         <Switch>
           <Route path={`${path}/calendar`}>
@@ -43,8 +42,8 @@ const Dashboard = () => {
             <MentorProfile />
           </Route>
         </Switch>
-      </div>
-    </div>
+      </div> }
+    </div> 
   );
 };
 

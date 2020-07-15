@@ -13,8 +13,12 @@ const MentorProfile = () => {
 
     const {register, handleSubmit, watch, errors} = useForm();
     const [categoryNumber, setCategoryNumber] = useState(1)
-    const currentMentor = useSelector(state => state.mentorReducer.mentor)
-    console.log("currentMentor" , currentMentor)
+    const currentUser = useSelector((state) => state.authReducer.user);
+    const mentors = useSelector(state => state.mentorReducer.mentors)
+    const [currentMentor, setCurrentMentor] = useState(() => {
+        const mentor = mentors.find(i => i.mentor_id == currentUser.id);
+        return mentor
+      })
     const dispatch = useDispatch()
     let history = useHistory()
 
