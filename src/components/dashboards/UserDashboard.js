@@ -11,9 +11,7 @@ import "../../sass/userDashboard.scss";
 
 function UserDashboard() {
   const [date, setDate] = useState(new Date());
-  const [interests, setInterests] = useState([]);
-  const currentUser = useSelector((state) => state.authReducer.user);
-
+  // const [interests, setInterests] = useState([]);
   const currentUser = useSelector((state) => state.authReducer.user);
   const [interests, setInterests] = useState([
     currentUser.interest_1,
