@@ -61,7 +61,7 @@
         margin-top: 100px;
     }
     .thread{
-        margin-top: 150px;
+        margin-top: 140px;
         height: 300px;
         width: 500px;
         border-radius: 4px;
@@ -82,16 +82,23 @@
 
     p{
         height: 300px;
-        width: 250px;
-        background-color: #2A475E;
+        width: 220px;
+        background-color: #266497;
         margin-bottom: 2rem;
         margin-top: 5%;
         border-radius: 4px;
-        color: #BDD98F;
+        color: white;
+        text-shadow: 0.1px 0.3px 1px ghostwhite;
         font-size: 18px;
         text-align: left;
         padding: 18px 15px 5px 20px;
-        box-shadow: 2px 3px black;
+        box-shadow: 2px 5px 5px black;
+
+    }
+
+    p:hover{
+        box-shadow: 3px 5px 15px black;
+        zoom: 105%;
     }
 }
 
