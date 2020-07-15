@@ -14,7 +14,7 @@ const Dashboard = () => {
   const { path } = useRouteMatch();
 
   return (
-    <div className="dashContainer">
+    <div className="dashContainer" data-test="dashboard">
       <Navbar />
       <VerifyUser />
       <>

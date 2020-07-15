@@ -5,7 +5,7 @@ import "../../sass/header.scss";
 
 import Login from "../buttons/Login";
 import Logout from "../buttons/Logout";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const { authState } = useOktaAuth();
