@@ -11,28 +11,22 @@ export default function UserProfile() {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.authReducer.user);
   const [categoryNumber, setCategoryNumber] = useState(1);
-  let history = useHistory();
+  let values = getValues();
 
   const addCategory = (e) => {
     e.preventDefault();
     setCategoryNumber(categoryNumber + 1);
   };
 
-  const submitUserInfo = values => {
-    dispatch(editUser(currentUser.id, values))
-    history.push('/dashboard/calender')
-  }
+  const submitUserInfo = (values) => {
+    dispatch(editUser(currentUser.id, values));
+  };
 
   return (
     <div className="mentorRegistration">
       <form
         className="mentorRegisterForm"
-        onSubmit={(e) => {
-          e.preventDefault();
-          let values = getValues();
-          submitUserInfo(values);
-          history.push("/dashboard/calendar");
-        }}
+        onSubmit={handleSubmit(submitUserInfo(values))}
       >
         <label>
           First Name:
