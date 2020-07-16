@@ -11,9 +11,13 @@ import "../../sass/userDashboard.scss";
 
 function UserDashboard() {
   const [date, setDate] = useState(new Date());
-  const [interests, setInterests] = useState([]);
+  // const [interests, setInterests] = useState([]);
   const currentUser = useSelector((state) => state.authReducer.user);
-
+  const [interests, setInterests] = useState([
+    currentUser.interest_1,
+    currentUser.interest_2,
+    currentUser.interest_3,
+  ]);
   const onChange = (date) => {
     setDate(date);
   };
@@ -26,7 +30,7 @@ function UserDashboard() {
         <StarRatingComponent
           name="userRating"
           starCount={5}
-          // value={currentUser.rating}
+          value={currentUser.rating}
         />
       </div>
       <div className="top-right">

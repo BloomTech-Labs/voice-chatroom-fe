@@ -7,7 +7,7 @@ function CalendarPage() {
     setDate(date);
   };
 
-  return <div class="calendar-container"></div>;
+  return <div className="calendar-container"></div>;
 }
 
 export default CalendarPage;
