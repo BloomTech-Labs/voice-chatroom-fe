@@ -21,7 +21,7 @@ export default function UserProfile() {
 
   const submitUserInfo = values => {
     dispatch(editUser(currentUser.id, values))
-    history.push('/dashboard/calender')
+    // history.push('/dashboard/calender')
   }
 
 
