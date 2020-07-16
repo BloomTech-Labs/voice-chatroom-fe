@@ -16,7 +16,7 @@ const Navbar = () => {
         <Link to={`${url}/calendar`}>Calendar</Link>
         <a href="">Find a Mentor</a>
         <a href="">Notes</a>
-        <Link to={`${url}/profile`} replace>
+        <Link to={`${url}/profile`}>
           Profile
         </Link>
       </nav>
