@@ -1,5 +1,10 @@
-import React from "react";
-import { Route, Switch, useRouteMatch } from "react-router-dom";
+import React , { useState } from "react";
+import {
+  Route,
+  Switch,
+  useRouteMatch,
+} from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
 
 import "../../sass/dashboard.scss";
 
@@ -7,17 +12,25 @@ import "../../sass/dashboard.scss";
 import Navbar from "../navigation/Navbar";
 import UserDashboard from "../dashboards/UserDashboard";
 import UserProfile from "../profile/UserProfile";
-import VerifyUser from "./VerifyUser";
+import VerifyUser from './VerifyUser';
+import MentorProfile from "../profile/MentorProfile";
 import CalendarPage from "./CalendarPage";
 
 const Dashboard = () => {
+  //selecting user from redux store
+  const currentUser = useSelector(state => state.authReducer.user)
+
   const { path } = useRouteMatch();
+  
+  // selecting mentors from redux store
+  const currentMentors = useSelector(state => state.mentorReducer.mentors)
 
   return (
     <div className="dashContainer" data-test="dashboard">
       <Navbar />
-      <VerifyUser />
-      <>
+     <VerifyUser /> 
+     { currentUser.id !== 0 && 
+      <div>
         <Switch>
           <Route path={`${path}/calendar`}>
             <CalendarPage />
@@ -25,12 +38,12 @@ const Dashboard = () => {
           <Route path={`${path}/profile`}>
             <UserProfile />
           </Route>
-          <Route path={`${path}`}>
-            <UserDashboard />
+          <Route path={`${path}/mentor/profile`}>
+            <MentorProfile />
           </Route>
         </Switch>
-      </>
-    </div>
+      </div> }
+    </div> 
   );
 };
 

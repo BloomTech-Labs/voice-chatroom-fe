@@ -27,7 +27,12 @@ const Navbar = () => {
         </Link>
       ) : (
         <nav className="mentorNav">
-          <a href="">Mentor Profile</a>
+          <Link
+          to={`${url}/mentor/profile`}
+          replace
+        >
+         Mentor Profile
+        </Link>
           <a href="">Resources</a>
           <a href="">View Mentees</a>
         </nav>
