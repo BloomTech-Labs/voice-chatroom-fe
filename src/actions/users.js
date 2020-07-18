@@ -24,7 +24,6 @@ export const SET_LOADING = "SET_LOADING";
 
 // Dispatch functions here
 export const getAllUsers = () => (dispatch) => {
-  console.log("dispatch?");
   dispatch({ type: FETCH_ALL_REQUEST });
 
   axiosWithAuth()
@@ -43,7 +42,7 @@ export const editUser = (id, info) => (dispatch) => {
   axiosWithAuth()
     .put(`/users/${id}`, info)
     .then((res) => {
-      dispatch({ type: EDIT_USER_SUCCESS, payload: res.data });
+      dispatch({ type: EDIT_USER_SUCCESS, payload: res });
     })
     .catch((error) => {
       dispatch({ type: EDIT_USER_FAILURE, payload: error.message });
