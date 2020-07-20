@@ -5,15 +5,14 @@ import "../../sass/header.scss";
 
 import Login from "../buttons/Login";
 import Logout from "../buttons/Logout";
-import { Link } from 'react-router-dom';
 
 const Header = () => {
   const { authState } = useOktaAuth();
 
   return (
-    <header>
+    <header data-test="headerComponent">
       <h1>
-        <Link to="/dashboard">Wyzer</Link></h1>
+        <a href="wyzerapp.com/dashboard">Wyzer</a></h1>
 
       {authState.isAuthenticated ? <Logout /> : <Login />}
     </header>
