@@ -12,6 +12,15 @@ jest.mock('react-router-dom', () => ({
   }
 }));
 
+jest.mock('react-redux', () => ({
+  useSelector: () => {
+    return {
+      currentUser: {}
+  };
+}
+}));
+
+
 describe("Dashboard Component render success", () => {
 
   it("without errors", () => {
