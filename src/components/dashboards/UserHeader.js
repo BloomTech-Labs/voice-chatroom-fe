@@ -11,7 +11,7 @@ export default function UserHeader(props) {
     <div data-test="userHeader">
       <form>
         {/* <input value={props.user.name} type="text" onChange={}/> */}
-        <p className="user">
+        <p className="user" data-test="username">
           Welcome back, {currentUser.given_name} {currentUser.family_name}!
         </p>
         <div>
