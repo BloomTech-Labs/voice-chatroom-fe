@@ -19,10 +19,6 @@
     "graphql": "^15.0.0",
     "graphql-tag": "^2.10.3",
     "jest-config": "^24.9.0",
-<<<<<<< HEAD
-    "jest-fetch-mock": "^3.0.3",
-=======
->>>>>>> cd8f35a5c97a4e587d16385014eefc11dd0535b1
     "less": "^3.11.1",
     "less-watch-compiler": "^1.14.6",
     "mutationobserver-shim": "^0.3.7",
