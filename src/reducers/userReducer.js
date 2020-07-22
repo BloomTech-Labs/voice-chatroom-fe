@@ -14,7 +14,7 @@ export default function userReducer(state = {}, action) {
             return {
                 error: action.error
             }
-        case userConstants.DELETE_REQIEST: 
+        case userConstants.DELETE_REQUEST: 
             return {
                 ...state,
                 items: state.items.map(user => 
