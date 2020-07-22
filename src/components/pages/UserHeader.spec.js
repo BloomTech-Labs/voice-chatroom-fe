@@ -4,25 +4,24 @@ import UserHeader from "../dashboards/UserHeader";
 
 import { findByTestAtrr } from "../../utils/testHelpers";
 
-jest.mock("react-redux", () => ({
-  useSelector: () => {
-    return {
-      currentUser: { given_name: "Bob", family_name: "Martin" },
-    };
-  },
-}));
-
-describe("it renders the user header", () => {
-  it("without crashing", () => {
-    const component = shallow(<UserHeader />);
-    const wrapper = findByTestAtrr(component, "userHeader");
-    expect(wrapper.length).toBe(1);
+describe("it renders", () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow(<UserHeader />);
   });
 
-  it("loads user's name", () => {
-    const component = shallow(<UserHeader />);
-    const wrapper = findByTestAtrr(component, "username");
-    //expect(wrapper.length).toBe(1);
-    expect.stringMatching(/bob/i);
+  it("without crashing", () => {
+    const component = findByTestAtrr(wrapper, "userHeader");
+    expect(component.length).toBe(1);
+  });
+
+  it("Should render a title", () => {
+    const title = findByTestAtrr(wrapper, "title");
+    expect(title.length).toBe(1);
+  });
+
+  it("Should render a location", () => {
+    const location = findByTestAtrr(wrapper, "location");
+    expect(location.length).toBe(1);
   });
 });

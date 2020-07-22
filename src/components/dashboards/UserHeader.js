@@ -11,13 +11,15 @@ export default function UserHeader(props) {
     <div data-test="userHeader">
       <form>
         {/* <input value={props.user.name} type="text" onChange={}/> */}
-        <p className="user" data-test="username">
+        <p className="user" data-test="title">
           Welcome back, {currentUser.given_name} {currentUser.family_name}!
         </p>
         <div>
           {/* <img src={props.user.avatar}></img>
         <p>{props.user.location}</p> */}
-          <p className="location">Location: {currentUser.location}</p>
+          <p className="location" data-test="location">
+            Location: {currentUser.location}
+          </p>
         </div>
       </form>
     </div>
