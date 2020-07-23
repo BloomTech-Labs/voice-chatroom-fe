@@ -18,6 +18,7 @@ describe("async actions", () => {
         { given_name: "bob", family_name: "shultz" },
         { given_name: "rick", family_name: "smitts" },
         { given_name: "duke", family_name: "nukem" },
+        { given_name: "Bobby", family_name: "Johnson" },
       ],
       headers: { "content-type": "application/json" },
     });
