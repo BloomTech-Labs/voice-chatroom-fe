@@ -61,7 +61,7 @@ Wyzer is an app that will connect people looking for a mentor with seasoned expe
 
 
 
-#### Front end deployed to `🚫insert service here`
+#### Front end deployed to `AWS Amplify`
 
 #### [Back end](https://github.com/Lambda-School-Labs/voice-chatroom-be) built using:
 
