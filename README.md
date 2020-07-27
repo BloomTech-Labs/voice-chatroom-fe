@@ -79,18 +79,18 @@ Back end framework
 
 Okta login authorization API, used to create and store new account users and validate auth tokens. Provides secure login and registration features.
 
-## 2️⃣ Payment API here
+## Payment API here
 
 
 ## Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
-    *  REACT_APP_OKTA_DOMAIN
-    *  REACT_APP_CLIENT_ID
-    *  REACT_DB_URL
+* REACT_APP_OKTA_DOMAIN
+*  REACT_APP_CLIENT_ID
+*  REACT_DB_URL
 
-# 5️⃣ Content Licenses
+# Content Licenses
 
 
 | Image Filename | Source / Creator | License                                                                      |
