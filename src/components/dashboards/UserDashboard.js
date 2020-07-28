@@ -23,7 +23,7 @@ function UserDashboard() {
   };
 
   return (
-    <div className="dash-container">
+    <div className="dash-container" data-test="userDash">
       <div className="top-left">
         <UserHeader user={currentUser} />
         Your Rating:{" "}

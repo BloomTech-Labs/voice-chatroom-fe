@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import UserHeader from "../dashboards/UserHeader";
+import UserHeader from "./UserHeader";
 
 import { findByTestAtrr } from "../../utils/testHelpers";
 
