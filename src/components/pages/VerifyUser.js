@@ -15,7 +15,11 @@ const VerifyUser = () => {
     dispatch(getAllMentors());
   }, []);
 
-  return <div>{currentUser.id === 0 ? <p>loading user info</p> : <p></p>}</div>;
+  return (
+    <div data-test="verify">
+      {currentUser.id === 0 ? <p>loading user info</p> : <p></p>}
+    </div>
+  );
 };
 
 export default VerifyUser;
