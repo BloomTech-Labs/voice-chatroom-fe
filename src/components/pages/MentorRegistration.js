@@ -10,7 +10,7 @@ import { registerMentor } from '../../actions/mentors'
 import plus from '../assets/plus.png'
 
 const MentorRegistration = () => {
-    const {register, handleSubmit, watch, errors} = useForm();
+    const { register, handleSubmit, watch, errors } = useForm();
     const [categoryNumber, setCategoryNumber] = useState(1)
     const currentUser = useSelector(state => state.authReducer)
     const dispatch = useDispatch()
@@ -38,7 +38,7 @@ const MentorRegistration = () => {
     return (
         <div className="mentorRegistration">Mentor Registration
             <form className="mentorRegisterForm" onSubmit={handleSubmit(submitMentorRegistration)}>
-                <label>Mentor Name
+                <label>Mentor Name Here
                     <input
                         name="mentor_name"
                         ref={register({ required: true })}
@@ -50,7 +50,7 @@ const MentorRegistration = () => {
                         ref={register({ required: true })}
                     />
                 </label>}
-                
+
                 {categoryNumber > 1 && <label>Mentor Category 2
                     <input
                         name="category_2"
