@@ -13,7 +13,7 @@
     "apollo-client": "^2.6.8",
     "apollo-link-context": "^1.0.20",
     "apollo-link-http": "^1.5.17",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-jest": "^24.9.0",
     "dotenv": "^8.2.0",
     "fetch-mock": "^9.10.4",
